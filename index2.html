@@ -99,7 +99,7 @@
                   </div>
                   <div class="col-md-8" style="position:  relative; top: 10px; ">
                     <div class="text-center subname">
-                      <but href="https://maps.app.goo.gl/NrcM1PYXobvUbpP47" class="transparent-button">Location Map</but>
+                      <a href="https://maps.app.goo.gl/NrcM1PYXobvUbpP47" class="transparent-button">Location Map</a>
                     </div>
                 </div>
                 </div>
@@ -148,19 +148,20 @@
             </svg>
         </span>
         
-          <button class="btn btn-primary position-absolute bottom-0 start-0" style="background-color: transparent; left: 0px;  position:  relative; border-style: none; bottom: 20px;">
+          <button class="btn btn-primary position-absolute bottom-0 start-0 " onclick="toggleAudio()" style="background-color: transparent; position: relative; border-style: none; bottom: 20px; left: 0px; z-index: 100;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
                 <path fill="currentColor" d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path>
             </svg>
         </button>
-        
+        <audio  id="myAudio" preload="auto" loop autoplay >
+          <source src="media/you_are_the_reason.mp3" type="audio/mpeg"/>
+      </audio>   
   
         </div>
       </section>
 		</section>
 
 
-    
 
 
 
@@ -169,5 +170,18 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      var audio = document.getElementById("myAudio");
+
+      function toggleAudio() {
+          if (audio.paused) {
+              audio.play();
+          } else {
+              audio.pause();
+          }
+      }
+  </script>
+
   </body>
 </html>
