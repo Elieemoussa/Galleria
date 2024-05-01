@@ -1,21 +1,14 @@
 .owl-carousel,.owl-carousel .owl-item {
   -webkit-tap-highlight-color: transparent;
-  position: relative;
+  position: sticky;
 }
-
-.owl-carousel .owl-item {
-  margin-right: 20px; /* Increase the margin if needed */
-  width: 200px; 
-}
-
 .owl-carousel {
   display: none;
   width: 100%;
   z-index: 1;
 }
 .owl-carousel .owl-stage {
-  display: flex;
-  justify-content: space-between; /* Distribute items evenly */
+  display: flex; 
 }
 .owl-carousel .owl-stage:after {
   content: ".";
@@ -26,29 +19,15 @@
   height: 0;
 }
 .owl-carousel .owl-stage-outer {
-  position: inherit;
+  position: relative;
   overflow: hidden;
 
 }
 
 .owl-carousel .owl-item {
-  flex: 0 0 auto; /* Prevent items from growing or shrinking */
-  width: 25%; /* Set a fixed width for each item */
-  margin-right: 10px; /* Adjust margin between items */
-  position: relative;
-  height: 80vh;
-}
-
-.owl-carousel .owl-item:last-child {
-  margin-right: 0; /* Remove margin from the last item */
-}
-
-
-
-.owl-carousel .owl-item img {
-  flex: 1; /* Allow images to grow and shrink within flex container */
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  align-items: stretch; /* Stretch items to fit the container height */
+  min-height: 80vh; /* Set minimum height to 80% of viewport height */
+  float: left;
 }
 
 
@@ -100,9 +79,7 @@
 .owl-carousel.owl-rtl {
   direction: rtl;
 }
-.owl-carousel.owl-rtl .owl-item {
-  float: right;
-}
+
 .owl-carousel .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -125,25 +102,5 @@
   max-height: 0;
 }
 
-.owl-carousel .owl-video-wrapper {
-  position: relative;
-  height: 100%;
-  background: #000;
-}
 
-
-.owl-carousel .owl-video-tn {
-  opacity: 0;
-  height: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: opacity .4s ease;
-}
-.owl-carousel .owl-video-frame {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-}
 
