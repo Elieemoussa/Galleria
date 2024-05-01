@@ -8203,6 +8203,8 @@ overflow-y: hidden;
     
 .transparent-button {
   background-color: transparent;
+  backdrop-filter: blur(3px); /* Apply blur effect */
+	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
   border: 2px solid white;
   color: white;
   text-align: center;
