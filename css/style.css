@@ -53,11 +53,11 @@ body {
   position: relative;
   background-image: url('/images/prop14.jpg');
   background-color: #000000;
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  overflow-y: hidden;
+  
 }
 
 /* body::before {
