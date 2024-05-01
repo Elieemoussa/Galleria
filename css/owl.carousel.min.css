@@ -8,10 +8,8 @@
   z-index: 1;
 }
 .owl-carousel .owl-stage {
-  position: relative;
-  -ms-touch-action: pan-Y;
-  touch-action: manipulation;
-  -moz-backface-visibility: hidden;
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
 }
 .owl-carousel .owl-stage:after {
   content: ".";
@@ -22,23 +20,26 @@
   height: 0;
 }
 .owl-carousel .owl-stage-outer {
-  position: relative;
+  position: inherit;
   overflow: hidden;
 
 }
 
 .owl-carousel .owl-item {
-
-  align-items: stretch; /* Stretch items to fit the container height */
-  min-height: 80vh; /* Set minimum height to 100% of viewport height */
-  float: left; /* Remove float */
-  -webkit-backface-visibility: visible;
-  -webkit-touch-callout: none;
+  flex: 0 0 auto; /* Prevent items from growing or shrinking */
+  width: 25%; /* Set a fixed width for each item */
+  margin-right: 10px; /* Adjust margin between items */
+  position: relative;
+  height: 80vh;
+}
+.owl-carousel .owl-item:last-child {
+  margin-right: 0;
 }
 
 .owl-carousel .owl-item img {
-  display: block;
+  flex: 1; /* Allow images to grow and shrink within flex container */
   width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
 
 
