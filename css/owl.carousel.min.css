@@ -2,14 +2,17 @@
   -webkit-tap-highlight-color: transparent;
   position: sticky;
 }
+
 .owl-carousel {
   display: none;
   width: 100%;
   z-index: 1;
 }
+
 .owl-carousel .owl-stage {
   display: flex; 
 }
+
 .owl-carousel .owl-stage:after {
   content: ".";
   display: block;
@@ -19,7 +22,7 @@
   height: 0;
 }
 .owl-carousel .owl-stage-outer {
-  position: relative;
+  position: absolute;
   overflow: hidden;
 
 }
@@ -30,13 +33,6 @@
   
 }
 
-
-
-.featured-carousel.disabled-dots .owl-dot {
-  pointer-events: none; 
-  opacity: 0.5; 
-  cursor: default; 
-}
 
 
 .no-js .owl-carousel,.owl-carousel.owl-loaded {
@@ -72,10 +68,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.owl-carousel.owl-grab {
-  cursor: move;
-  cursor: grab;
-}
+
 .owl-carousel.owl-rtl {
   direction: rtl;
 }
@@ -88,7 +81,7 @@
   z-index: 0;
 }
 .owl-carousel .owl-animated-out {
-  z-index: 1;
+  z-index: 2;
 }
 
 .owl-height {
