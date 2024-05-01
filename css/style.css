@@ -50,14 +50,25 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
 body {
+  position: relative;
   background-image: url('/images/prop14.jpg');
-  background-color: #000;
+  background-color: #000000;
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   overflow-y: hidden;
 }
+
+/* body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to change the overlay opacity 
+} */
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
