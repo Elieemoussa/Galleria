@@ -38,6 +38,13 @@
 			}
 		});
 	
+		// Calculate and set fixed item width
+		var carouselWidth = $carousel.width();
+		var itemsToShow = $carousel.data('owl.carousel').options.items;
+		var margin = $carousel.data('owl.carousel').options.margin;
+		var itemWidth = (carouselWidth - (itemsToShow - 1) * margin) / itemsToShow;
+		$carousel.find('.owl-item').width(itemWidth);
+	
 		// Add event listener to disable dots when needed
 		$carousel.on('disableDots', function() {
 			$carousel.addClass('disabled-dots');
@@ -46,12 +53,13 @@
 		$carousel.on('enableDots', function() {
 			$carousel.removeClass('disabled-dots');
 		});
-
-		    // Disable dots after carousel initialization
-			$carousel.trigger('disableDots');
+	
+		// Disable dots after carousel initialization
+		$carousel.trigger('disableDots');
 	};
 	
 	carousel();
+	
 	
 
 })(jQuery);

@@ -2,6 +2,12 @@
   -webkit-tap-highlight-color: transparent;
   position: relative;
 }
+
+.owl-carousel .owl-item {
+  margin-right: 20px; /* Increase the margin if needed */
+  width: 200px; 
+}
+
 .owl-carousel {
   display: none;
   width: 100%;
@@ -32,9 +38,12 @@
   position: relative;
   height: 80vh;
 }
+
 .owl-carousel .owl-item:last-child {
-  margin-right: 0;
+  margin-right: 0; /* Remove margin from the last item */
 }
+
+
 
 .owl-carousel .owl-item img {
   flex: 1; /* Allow images to grow and shrink within flex container */
