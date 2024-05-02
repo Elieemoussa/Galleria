@@ -8232,6 +8232,18 @@ overflow-y: hidden;
   }
 
 
+  .photos {
+    width: 70%;
+    height: auto;
+/* Adjust this value to control the maximum height of the images */
+}
+
+.image-container {
+    margin-bottom: 10px;
+}
+
+
+
     @font-face {
       font-family: __Great_Vibes_f7b9e5;
       font-style: normal;
