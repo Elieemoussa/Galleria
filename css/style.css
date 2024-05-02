@@ -58,6 +58,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* body::before {
