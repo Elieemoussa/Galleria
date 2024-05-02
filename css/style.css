@@ -8225,9 +8225,10 @@ overflow-y: hidden;
   
   
   .transparent-button:hover {
-      background-color: white;
-      color: transparent;
+      /* background-color: white; */
+      color: white;
       text-decoration: none;
+      /* opacity: 0.5; */
   }
 
 
