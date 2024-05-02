@@ -30,7 +30,7 @@
 .owl-carousel .owl-item {
   align-items: stretch; /* Stretch items to fit the container height */
   min-height: 80vh; /* Set minimum height to 80% of viewport height */
-  overflow: hidden;
+  
 }
 
 
