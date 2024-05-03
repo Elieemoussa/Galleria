@@ -8233,10 +8233,24 @@ overflow-y: hidden;
       /* opacity: 0.5; */
   }
 
+  .blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 20px; /* Adjust as needed */
+    padding-bottom: 10px; /* Adjust as needed */
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Adjust the blur effect */
+    border-radius: 10px; /* Adjust the border radius */
+    z-index: -1;
+  }
+  
 
   .photos {
     width: 70%;
     height: auto;
+
 /* Adjust this value to control the maximum height of the images */
 }
 
