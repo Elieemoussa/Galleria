@@ -1,6 +1,6 @@
 .owl-carousel,.owl-carousel .owl-item {
   -webkit-tap-highlight-color: transparent;
-  position: relative; /* Changed from sticky to relative */
+  position: sticky;
 }
 
 .owl-carousel {
@@ -11,25 +11,20 @@
 
 .owl-carousel .owl-stage {
   display: flex; 
-  flex-wrap: nowrap; /* Added to prevent items from wrapping onto next line */
 }
 
 .owl-carousel .owl-stage:after {
-  content: "";
+  content: ".";
   display: block;
   clear: both;
   visibility: hidden;
   line-height: 0;
   height: 0;
 }
-
 .owl-carousel .owl-stage-outer {
-  position: relative; /* Changed from absolute to relative */
+  position: absolute;
   overflow: hidden;
-}
 
-.item {
-  position: sticky; /* Ensure position is relative */
 }
 
 .owl-carousel .owl-item {
