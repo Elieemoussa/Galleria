@@ -4986,7 +4986,7 @@ a.close.disabled {
       display: inline-block; /* Changed from none to inline-block */
       /* Removed float: left; */
       width: 100%;
-      margin-right: -100%;
+      /* Removed margin-right: -100%; */
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       -webkit-transition: -webkit-transform 0.6s ease-in-out;
@@ -5009,18 +5009,6 @@ a.close.disabled {
 .carousel-item-prev {
   display: block; }
 
-.carousel-item-next:not(.carousel-item-left),
-.active.carousel-item-right {
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%); }
-
-.carousel-item-prev:not(.carousel-item-right),
-.active.carousel-item-left {
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
- }
 
 .carousel-fade .carousel-item {
   opacity: 0;
