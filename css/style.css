@@ -4963,6 +4963,8 @@ a.close.disabled {
   padding: 0.5rem 0.75rem;
   color: #212529; }
 
+
+ /* carousel issue  */
 .carousel {
   position: relative; }
 
@@ -4979,19 +4981,23 @@ a.close.disabled {
     clear: both;
     content: ""; }
 
-.carousel-item {
-  position: relative;
-  display: none;
-  float: left;
-  width: 100%;
-  margin-right: -100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.6s ease-in-out;
-  transition: -webkit-transform 0.6s ease-in-out;
-  -o-transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out; }
+    .carousel-item {
+      position: relative;
+      display: inline-block; /* Changed from none to inline-block */
+      /* Removed float: left; */
+      width: 100%;
+      margin-right: -100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transition: -webkit-transform 0.6s ease-in-out;
+      transition: -webkit-transform 0.6s ease-in-out;
+      -o-transition: transform 0.6s ease-in-out;
+      transition: transform 0.6s ease-in-out;
+      transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+      vertical-align: top; /* Added to align items at the top */
+    }
+    
+
   @media (prefers-reduced-motion: reduce) {
     .carousel-item {
       -webkit-transition: none;
@@ -5013,7 +5019,8 @@ a.close.disabled {
 .active.carousel-item-left {
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
-  transform: translateX(-100%); }
+  transform: translateX(-100%);
+ }
 
 .carousel-fade .carousel-item {
   opacity: 0;
@@ -5163,6 +5170,13 @@ a.close.disabled {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+
+
+
+
+/* end crousel */
+
 
 .spinner-border {
   display: inline-block;

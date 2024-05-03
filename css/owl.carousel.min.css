@@ -1,6 +1,6 @@
 .owl-carousel,.owl-carousel .owl-item {
   -webkit-tap-highlight-color: transparent;
-  position: sticky;
+  position: relative; /* Changed from sticky to relative */
 }
 
 .owl-carousel {
@@ -11,26 +11,33 @@
 
 .owl-carousel .owl-stage {
   display: flex; 
+  flex-wrap: nowrap; /* Added to prevent items from wrapping onto next line */
 }
 
 .owl-carousel .owl-stage:after {
-  content: ".";
+  content: "";
   display: block;
   clear: both;
   visibility: hidden;
   line-height: 0;
   height: 0;
 }
-.owl-carousel .owl-stage-outer {
-  position: absolute;
-  overflow: hidden;
 
+.owl-carousel .owl-stage-outer {
+  position: relative; /* Changed from absolute to relative */
+  overflow: hidden;
+}
+
+.item {
+  position: sticky; /* Ensure position is relative */
 }
 
 .owl-carousel .owl-item {
   align-items: stretch; /* Stretch items to fit the container height */
   min-height: 80vh; /* Set minimum height to 80% of viewport height */
-  
+  width: 329px !important; /* Adjust width as per your inline style */
+  margin-right: 30px !important; /* Adjust margin */
+  left: 0% !important;
 }
 
 
