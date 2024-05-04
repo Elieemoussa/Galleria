@@ -21,19 +21,38 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <a href="#" class="transparent-button">Upload</a>
-            <input class="transparent-input" type="file" accept="image/*" capture="camera">
-            
+            <form id="imageForm">
+                <input id="fileInput" class="transparent-input" type="file" accept="image/*" capture="camera" multiple>
+            </form>
         </div>
     </div>
     <p>Take a photo</p>
 </div>
 
-<!-- 
+
 <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-</script> -->
+        // document.addEventListener('contextmenu', function (e) {
+        //     e.preventDefault();
+        // });
+
+        var maxPictures = 10;
+    var picturesTaken = 0;
+
+    document.getElementById("fileInput").addEventListener("change", function() {
+        if (this.files && this.files.length > 0) {
+            // Check if the number of pictures selected plus previously taken pictures exceeds the limit
+            if (this.files.length + picturesTaken > maxPictures) {
+                alert("You can only take a maximum of " + maxPictures + " pictures.");
+                // Clear the file input to prevent additional selection
+                this.value = "";
+            } else {
+                picturesTaken += this.files.length;
+            }
+        }
+    });
+
+
+</script>
 
 <style>
     .title {
@@ -98,7 +117,7 @@
   background-color: transparent;
   backdrop-filter: blur(3px); /* Apply blur effect */
 	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
-  border: 2px solid white;
+  /* border: 2px solid white; */
   color: white;
   text-align: center;
   text-decoration: none;
@@ -106,7 +125,7 @@
   align-items: center; 
   font-size: 1rem;
   line-height: 2.25rem;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   height: 3rem;
   width: 9rem;
 }
