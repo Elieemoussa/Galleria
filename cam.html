@@ -11,24 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/styleprogress.css">
 
-
 </head>
 <body>
 
     <div id="preloder">
 		<div class="loader"></div>
 	</div>
-
 <div id="b" class="container subname">
-    <!-- <h1 class="title">HOMERE SEMAAN</h1> -->  
-    <a  href="#" class="transparent-button">upload</a>
-    <input type="file" accept="image/*" capture="camera">
-    <p>Take a photos</p>
-
-    <label class="cameraButton">Take a picture
-        <input type="file" accept="image/*;capture=camera">
-      </label>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <a href="#" class="transparent-button">Upload</a>
+            <input class="transparent-input" type="file" accept="image/*" capture="camera">
+            
+        </div>
+    </div>
+    <p>Take a photo</p>
 </div>
+
 <!-- 
 <script>
         document.addEventListener('contextmenu', function (e) {
@@ -52,7 +51,7 @@
     body {
         /* user-select: none; */
         background-image: url('/images/prop14.jpg');
-        /* background-size: cover; */
+        background-size: cover;
         background-position: center;
         background-attachment: fixed;
         color: white;
@@ -74,31 +73,52 @@
     top: 90px; /* Adjust as needed */
 
 }
+
 .transparent-button {
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    cursor: pointer;
-    border-radius: 9999px;
-    transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
-    width: 7rem;
-    height: 7rem;
+  background-color: transparent;
+  backdrop-filter: blur(3px); /* Apply blur effect */
+	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-size: 1rem;
+  line-height: 2.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+  height: 3rem;
+  width: 9rem;
 }
 
-    
-    
-    .transparent-button:hover {
-        background-color: white;
-        color: transparent;
-        text-decoration: none;
-    }
+.transparent-input {
+  background-color: transparent;
+  backdrop-filter: blur(3px); /* Apply blur effect */
+	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center; 
+  align-items: center; 
+  font-size: 1rem;
+  line-height: 2.25rem;
+  border-radius: 10px;
+  height: 3rem;
+  width: 9rem;
+}
+
+  
+  
+  .transparent-button:hover {
+      /* background-color: white; */
+      color: white;
+      text-decoration: none;
+      /* opacity: 0.5; */
+  }
     h1 {
         font-family: "Georgia", serif; /* Change to your desired classic font */
         font-size: 2.5rem; /* Adjust the size as needed */
@@ -122,7 +142,9 @@
 
 </body>
 </html>
-
-
+<!-- 
+<label class="cameraButton">Take a picture
+    <input type="file" accept="image/*;capture=camera">
+  </label> -->
 
 
