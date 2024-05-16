@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const imageForm = document.getElementById('imageForm');
     const errorMessageElement = document.getElementById('error-message');
+    const succesMessageElement = document.getElementById('succes-message');
 
     if (imageForm) {
         imageForm.addEventListener('submit', function (event) {
@@ -23,19 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(response => {
                 if (response.ok) {
-                    fileInput.value = ''; // Clear the input field
+                    fileInput.value = ''; 
                 } else {
                     return response.json();
                 }
-
             })
             .then(data => {
                 if (data && data.message) {
-                    errorMessageElement.textContent = "Image uploaded successfull.";
-                } else {
-                    const errorMessageElement = document.getElementById('error-message');
-                    errorMessageElement.textContent = 'Registration failed. Please try again.';
-                
+                    errorMessageElement.textContent = data.message;
+                } else {          
+                    succesMessageElement.textContent = 'Image uploaded successfull.';          
                 }
             })
             .catch(error => {
