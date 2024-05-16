@@ -17,21 +17,22 @@
     <div id="preloder">
 		<div class="loader"></div>
 	</div>
+
     <div id="b" class="container subname">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4">
                 <form id="imageForm" enctype="multipart/form-data">
-                    <input id="fileInput" class="transparent-input" type="file" accept="image/*" capture="camera" required>
-                    <button type="submit" class="transparent-button">Upload Image</button>
+                        <input id="fileInput" class="transparent-input" type="file" accept="image/*" capture="camera" required>
+                        <button type="submit" class="transparent-button">Upload Image</button>
                 </form>
+            </div>
+            <div class="col-md-6">
                 <p id="error-message" style="color: red;"></p> 
-                <p id="succes-message" style="color: rgb(71, 130, 197);"></p>
+                <p id="success-message" style="color: rgb(71, 130, 197);"></p>
             </div>
         </div>
-        <p>Take a photo</p>
+        <p style="margin-top: 70px;">Take a photo</p>
     </div>
-    
-    
 
 
 <script>
@@ -102,11 +103,7 @@
 	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
   border: 2px solid white;
   color: white;
-  text-align: center;
   text-decoration: none;
-  display: inline-flex; 
-  justify-content: center; 
-  align-items: center; 
   font-size: 1rem;
   line-height: 2.25rem;
   border-radius: 10px;
@@ -114,23 +111,20 @@
   transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
   height: 3rem;
   width: 9rem;
+  position: relative;
+  top: 60px;
 }
 
 .transparent-input {
   background-color: transparent;
-  backdrop-filter: blur(3px); /* Apply blur effect */
-	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
+
   /* border: 2px solid white; */
   color: white;
-  text-align: center;
   text-decoration: none;
-  justify-content: center; 
-  align-items: center; 
   font-size: 1rem;
   line-height: 2.25rem;
   /* border-radius: 10px; */
-  height: 3rem;
-  width: 9rem;
+
 }
 
   
