@@ -17,17 +17,20 @@
     <div id="preloder">
 		<div class="loader"></div>
 	</div>
-<div id="b" class="container subname">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <a href="#" class="transparent-button">Upload</a>
-            <form id="imageForm">
-                <input id="fileInput" class="transparent-input" type="file" accept="image/*" capture="camera" multiple>
-            </form>
+    <div id="b" class="container subname">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <form id="imageForm" enctype="multipart/form-data">
+                    <input id="fileInput" class="transparent-input" type="file" accept="image/*" capture="camera" required>
+                    <button type="submit" class="transparent-button">Upload Image</button>
+                </form>
+                <p id="error-message" style="color: red;"></p> <!-- Error message will be displayed here -->
+            </div>
         </div>
+        <p>Take a photo</p>
     </div>
-    <p>Take a photo</p>
-</div>
+    
+    
 
 
 <script>
@@ -35,24 +38,24 @@
         //     e.preventDefault();
         // });
 
-        var maxPictures = 3;
-    var picturesTaken = 0;
+//         var maxPictures = 3;
+//     var picturesTaken = 0;
 
-    document.getElementById("fileInput").addEventListener("change", function() {
-        if (this.files && this.files.length > 0) {
-            // Check if the number of pictures selected plus previously taken pictures exceeds the limit
-            if (this.files.length + picturesTaken > maxPictures) {
-                alert("You can only take a maximum of " + maxPictures + " pictures.");
-                // Clear the file input to prevent additional selection
-                this.value = "";
-            } else {
-                picturesTaken += this.files.length;
-            }
-        }
-    });
+//     document.getElementById("fileInput").addEventListener("change", function() {
+//         if (this.files && this.files.length > 0) {
+//             // Check if the number of pictures selected plus previously taken pictures exceeds the limit
+//             if (this.files.length + picturesTaken > maxPictures) {
+//                 alert("You can only take a maximum of " + maxPictures + " pictures.");
+//                 // Clear the file input to prevent additional selection
+//                 this.value = "";
+//             } else {
+//                 picturesTaken += this.files.length;
+//             }
+//         }
+//     });
 
 
-</script>
+// </script>
 
 <style>
     .title {
@@ -152,12 +155,7 @@
 <script src="js/main1.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/circle-progress.min.js"></script>
-<script>
-    
-    // To disable scrolling
-    document.body.style.overflow = 'hidden';
-
-</script>
+<script src="js/js-backend/img.js"></script>></script>
 
 </body>
 </html>
