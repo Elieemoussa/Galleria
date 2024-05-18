@@ -1,3 +1,4 @@
+// save to the databse 
 
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -33,3 +34,19 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         document.getElementById('loading-spinner').style.display = 'none';
     }
 });
+
+// show under the input 
+document.getElementById('image').addEventListener('change', function() {
+    var file = this.files[0];
+    if (file) {
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        document.getElementById('preview').src = event.target.result;
+        document.getElementById('preview').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    } else {
+      document.getElementById('preview').src = "#";
+      document.getElementById('preview').style.display = 'none'; 
+    }
+  });
