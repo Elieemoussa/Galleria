@@ -36,6 +36,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         const result = await response.json();
         if (response.ok) {
             document.getElementById('success-message').textContent = result.message;
+            document.getElementById('uploadForm').reset();
         } else {
             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
         }
