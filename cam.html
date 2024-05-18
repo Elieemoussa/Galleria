@@ -105,14 +105,14 @@
         background-position: center;
         background-attachment: fixed;
         color: white;
-        background-color: black; 
-                
+        background-color: black;   
         overflow-y: hidden;
         overflow-x: hidden;
     }
+
     .container {
         height: 100vh;
-        display: flex;
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -183,15 +183,8 @@ h1 {
     display: none;
   }
 
-  input[type="file"]::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
 
-  input[type="file"] {
-    overflow: hidden;
-  }
+ 
 
 #preview {
     width: 70%; /* Set desired width */
@@ -204,8 +197,9 @@ h1 {
 }
 
 #image{
-    position: absolute;
-    bottom: 240px;
+    position: fixed;
+    top: 50px;
+    left: 140px;
 }
 
 #button{
