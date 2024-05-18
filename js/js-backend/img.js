@@ -1,27 +1,9 @@
 
-            // .then(response => {
-            //     if (response.ok) {
-            //         fileInput.value = ''; 
-            //     } else {
-            //         return response.json();
-            //     }
-            // })
-            // .then(data => {
-            //     if (data && data.message) {
-            //         errorMessageElement.textContent = data.message;
-            //     } else {          
-            //         succesMessageElement.textContent = 'Image uploaded successfull.';          
-            //     }
-            // })
-            // .catch(error => {
-            //     console.error('Error uploading image:', error);
-            //     errorMessageElement.textContent = 'Error uploading image. Please try again.';
-            // });
- 
-
-
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
+
+      // Show loading spinner
+      document.getElementById('loading-spinner').style.display = 'block';
 
     const formData = new FormData();
     const imageFile = document.getElementById('image').files[0];
@@ -42,5 +24,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         }
     } catch (error) {
         document.getElementById('message').textContent = `Error: ${error.message}`;
+    }finally {
+        // Hide loading spinner
+        document.getElementById('loading-spinner').style.display = 'none';
     }
 });
