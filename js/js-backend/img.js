@@ -1,46 +1,45 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const imageForm = document.getElementById('imageForm');
-    const errorMessageElement = document.getElementById('error-message');
-    const succesMessageElement = document.getElementById('succes-message');
 
-    if (imageForm) {
-        imageForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+            // .then(response => {
+            //     if (response.ok) {
+            //         fileInput.value = ''; 
+            //     } else {
+            //         return response.json();
+            //     }
+            // })
+            // .then(data => {
+            //     if (data && data.message) {
+            //         errorMessageElement.textContent = data.message;
+            //     } else {          
+            //         succesMessageElement.textContent = 'Image uploaded successfull.';          
+            //     }
+            // })
+            // .catch(error => {
+            //     console.error('Error uploading image:', error);
+            //     errorMessageElement.textContent = 'Error uploading image. Please try again.';
+            // });
+ 
 
-            const fileInput = document.getElementById('fileInput');
-            const file = fileInput.files[0];
 
-            if (!file) {
-                errorMessageElement.textContent = "Please select an image to upload.";
-                return;
-            }
+document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-            const formData = new FormData();
-            formData.append('image', file);
+    const formData = new FormData();
+    const imageFile = document.getElementById('image').files[0];
+    formData.append('image', imageFile);
 
-            fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    fileInput.value = ''; 
-                } else {
-                    return response.json();
-                }
-            })
-            .then(data => {
-                if (data && data.message) {
-                    errorMessageElement.textContent = data.message;
-                } else {          
-                    succesMessageElement.textContent = 'Image uploaded successfull.';          
-                }
-            })
-            .catch(error => {
-                console.error('Error uploading image:', error);
-                errorMessageElement.textContent = 'Error uploading image. Please try again.';
-            });
+    try {
+        const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
+            method: 'POST',
+            body: formData
         });
+
+        const result = await response.json();
+        if (response.ok) {
+            document.getElementById('success-message').textContent = result.message;
+        } else {
+            document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
+        }
+    } catch (error) {
+        document.getElementById('message').textContent = `Error: ${error.message}`;
     }
 });
-
