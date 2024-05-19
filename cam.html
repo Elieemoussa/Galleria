@@ -18,29 +18,27 @@
 		<div class="loader"></div>
 	</div>
 
+        
+
+
     <div id="b" class="container subname">
+
         <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
                 <form id="uploadForm" enctype="multipart/form-data">
                     <input type="file" id="image" name="image" accept="image/*" required>
-               
+
                     <button type="submit"  id="button" class="transparent-button">Upload</button>
                 </form>
             </div>
+
+            <p id="message" style="color: gray;">test</p> 
+            <div id="loading-spinner"></div>
             <img id="preview" src="#" alt="preview">
         </div>
     </div>
     
-   <footer>
-    
-     <div class="row justify-content-center align-items-center">
-         <div class="col-md-4">
-            <div id="loading-spinner"></div>
-            <p id="message" style="color: red;"></p> 
-            <p id="success-message" style="color: rgb(71, 130, 197);"></p>
-          </div>
-     </div>
-   </footer>
+
 
 <script>
         // document.addEventListener('contextmenu', function (e) {
@@ -90,6 +88,10 @@
             animation: spin 1s linear infinite;
             margin: 0 auto;
             margin-top: 20px;
+            position: relative;
+            top: 185px;
+            right:20px;
+            z-index: 3;
         }
 
         @keyframes spin {
@@ -191,7 +193,7 @@ h1 {
     object-fit: contain; /* Maintain aspect ratio and cover entire area */
     position: absolute;
     top: 200px;
-    z-index: 5;
+    z-index: 2;
     display: none;
 }
 

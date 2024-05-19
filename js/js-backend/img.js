@@ -18,16 +18,18 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
         const result = await response.json();
         if (response.ok) {
-            document.getElementById('success-message').textContent = '';
-            document.getElementById('success-message').textContent = result.message;
+            document.getElementById('message').textContent = '';
+            document.getElementById('message').textContent = result.message;
             document.getElementById('uploadForm').reset();
             document.getElementById('message').textContent = '';
+            document.getElementById('preview').style.display = 'none'; 
+
         } else {
-            document.getElementById('success-message').textContent = '';
+            document.getElementById('message').textContent = '';
             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
         }
     } catch (error) {
-        document.getElementById('success-message').textContent = '';
+        document.getElementById('message').textContent = '';
         document.getElementById('message').textContent = `Error: ${error.message}`;
     }finally {
         // Hide loading spinner
