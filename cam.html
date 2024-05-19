@@ -34,7 +34,7 @@
 
             <p id="message" style="color: rgb(255, 54, 54);"></p> 
             <div id="loading-spinner"></div>
-            <img id="preview" src="#" alt="preview">
+            <img class="filter" id="preview" src="#" alt="preview">
         </div>
     </div>
     
@@ -191,10 +191,7 @@ h1 {
     display: none;
   }
 
-
- 
-
-#preview {
+  #preview {
     width: 70%; /* Set desired width */
     height: 30%; /* Set desired height */
     object-fit: contain; /* Maintain aspect ratio and cover entire area */
@@ -202,13 +199,24 @@ h1 {
     top: 200px;
     z-index: 2;
     display: none;
+}
+
+#preview.filter {
     -webkit-filter: contrast(90%) sepia(20%);
     filter: contrast(90%) sepia(20%);
+}
+
+#preview.filter::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
     mix-blend-mode: overlay;
     background: -webkit-radial-gradient(50% 50%, circle closest-corner, rgba(208, 186, 142, 1) 20, rgba(29, 2, 16, 0.2));
     background: radial-gradient(50% 50%, circle closest-corner, rgba(208, 186, 142, 1) 20, rgba(29, 2, 16, 0.2));
-
 }
+
+ 
+
 
 #image{
     position: relative;
