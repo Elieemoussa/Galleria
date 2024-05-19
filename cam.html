@@ -26,13 +26,13 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
                 <form id="uploadForm" enctype="multipart/form-data">
-                    <input type="file" id="image" name="image" accept="image/*" required>
+                    <input type="file" id="image" name="image" accept="image/*" capture="environment" required>
 
                     <button type="submit"  id="button" class="transparent-button">Upload</button>
                 </form>
             </div>
 
-            <p id="message" style="color: rgb(255, 54, 54);">test</p> 
+            <p id="message" style="color: rgb(255, 54, 54);"></p> 
             <div id="loading-spinner"></div>
             <img id="preview" src="#" alt="preview">
         </div>

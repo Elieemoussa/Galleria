@@ -20,8 +20,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         if (response.ok) {
             document.getElementById('message').textContent = '';
             document.getElementById('message').textContent = result.message;
-            document.getElementById('uploadForm').reset();
-            document.getElementById('message').textContent = '';
+            document.getElementById('uploadForm').reset();      
             document.getElementById('preview').style.display = 'none'; 
 
         } else {
