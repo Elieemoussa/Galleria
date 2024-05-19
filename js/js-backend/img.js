@@ -51,3 +51,59 @@ document.getElementById('image').addEventListener('change', function() {
       document.getElementById('preview').style.display = 'none'; 
     }
   });
+
+    // Function to handle taking a photo
+    function takePhoto() {
+        // Check if the device supports the mediaDevices interface
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Request access to the camera
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                // Display the camera stream in a video element
+                var video = document.createElement('video');
+                video.srcObject = stream;
+                document.body.appendChild(video);
+
+                // Pause video playback
+                video.pause();
+
+                // Function to capture a frame from the video
+                function captureFrame() {
+                    // Create a canvas element
+                    var canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    var context = canvas.getContext('2d');
+
+                    // Draw the current frame from the video onto the canvas
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                    // Convert the canvas content to a data URL representing the image
+                    var imageDataURL = canvas.toDataURL('image/jpeg');
+
+                    // Set the data URL as the value of the file input
+                    document.getElementById('image').setAttribute('value', imageDataURL);
+
+                    // Clean up
+                    video.pause();
+                    stream.getVideoTracks()[0].stop();
+                    video.parentNode.removeChild(video);
+                }
+
+                // Play the video to capture a frame
+                video.play();
+
+                // Capture a frame after a short delay
+                setTimeout(captureFrame, 1000);
+            }).catch(function(error) {
+                console.error('Error accessing camera:', error);
+            });
+        } else {
+            console.error('getUserMedia not supported');
+        }
+    }
+
+    // Event listener for the "Take Photo" button
+    document.getElementById('takePhotoButton').addEventListener('click', function() {
+        takePhoto();
+        document.getElementById('uploadButton').style.display = 'inline-block'; // Show the upload button after taking the photo
+    });
