@@ -36,6 +36,14 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     }
 });
 
+document.getElementById("takePhotoButton").addEventListener("click", function() {
+    
+    document.getElementById("image").click();
+});
+
+
+
+
 // show under the input 
 document.getElementById('image').addEventListener('change', function() {
     var file = this.files[0];
@@ -52,7 +60,3 @@ document.getElementById('image').addEventListener('change', function() {
     }
   });
 
-  document.getElementById("takePhotoButton").addEventListener("click", function() {
-    // Trigger click event on the file input
-    document.getElementById("image").click();
-});
