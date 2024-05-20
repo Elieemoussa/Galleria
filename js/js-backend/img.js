@@ -42,43 +42,6 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
 });
 
 
-
-document.getElementById('image').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const canvas = document.getElementById('canvas');
-        const context = canvas.getContext('2d');
-        const reader = new FileReader();
-        
-        reader.onload = function(e) {
-            const img = new Image();
-            img.onload = function() {
-                canvas.width = img.width;
-                canvas.height = img.height;
-                context.filter = 'grayscale(100%)'; // Example filter: grayscale
-                context.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                // Convert canvas to blob and update the file input
-                canvas.toBlob(function(blob) {
-                    const newFile = new File([blob], file.name, { type: 'image/jpg' });
-                    const dataTransfer = new DataTransfer();
-                    dataTransfer.items.add(newFile);
-                    document.getElementById('image').files = dataTransfer.files;
-                }, 'image/jpg');
-            };
-            img.src = e.target.result;
-        };
-        
-        reader.readAsDataURL(file);
-    }
-});
-
-
-
-
-
-
-
 // show under the input 
 document.getElementById('image').addEventListener('change', function() {
     var file = this.files[0];
@@ -128,3 +91,36 @@ document.getElementById('image').addEventListener('change', function() {
 //             }
 //         }
 //     });
+
+
+
+
+// document.getElementById('image').addEventListener('change', function(event) {
+//     const file = event.target.files[0];
+//     if (file) {
+//         const canvas = document.getElementById('canvas');
+//         const context = canvas.getContext('2d');
+//         const reader = new FileReader();
+        
+//         reader.onload = function(e) {
+//             const img = new Image();
+//             img.onload = function() {
+//                 canvas.width = img.width;
+//                 canvas.height = img.height;
+//                 context.filter = 'grayscale(100%)'; // Example filter: grayscale
+//                 context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+//                 // Convert canvas to blob and update the file input
+//                 canvas.toBlob(function(blob) {
+//                     const newFile = new File([blob], file.name, { type: 'image/jpg' });
+//                     const dataTransfer = new DataTransfer();
+//                     dataTransfer.items.add(newFile);
+//                     document.getElementById('image').files = dataTransfer.files;
+//                 }, 'image/jpg');
+//             };
+//             img.src = e.target.result;
+//         };
+        
+//         reader.readAsDataURL(file);
+//     }
+// });
