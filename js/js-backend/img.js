@@ -57,10 +57,10 @@ document.getElementById('image').addEventListener('change', function() {
             // Apply CamanJS filter after the image is loaded
             Caman("#preview", function () {
                 // Apply the glow sun filter
-                this.glowingSun();
-                // this.brightness(-10);
-                this.contrast(5);
+                this.vintage();
+    
                 this.render();
+                
             });
         };
         reader.readAsDataURL(file);
