@@ -42,21 +42,38 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
 });
 
 
+
 // show under the input 
 document.getElementById('image').addEventListener('change', function() {
     var file = this.files[0];
     if (file) {
-      var reader = new FileReader();
-      reader.onload = function(event) {
-        document.getElementById('preview').src = event.target.result;
-        document.getElementById('preview').style.display = 'block';
-      };
-      reader.readAsDataURL(file);
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            // Set the source of the preview image to the loaded file
+            document.getElementById('preview').src = event.target.result;
+            // Display the preview image
+            document.getElementById('preview').style.display = 'block';
+
+            // Apply CamanJS filter after the image is loaded
+            Caman("#preview", function () {
+                // Apply the glow sun filter
+                this.glowingSun();
+                // this.brightness(-10);
+                this.contrast(5);
+                this.render();
+            });
+        };
+        reader.readAsDataURL(file);
     } else {
-      document.getElementById('preview').src = "#";
-      document.getElementById('preview').style.display = 'none'; 
+        // If no file is selected
+        // Reset the source of the preview image
+        document.getElementById('preview').src = "#";
+        // Hide the preview image
+        document.getElementById('preview').style.display = 'none'; 
     }
-  });
+});
+
+
 
 
 

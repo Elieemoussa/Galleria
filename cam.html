@@ -9,6 +9,7 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
     <link rel="stylesheet" href="css/styleprogress.css">
 
 </head>
@@ -31,13 +32,12 @@
                     <br>
                     <button type="submit"  id="button" class="transparent-button">Upload</button>
                 </form>
-            
 
                 <p id="message" style="color: rgb(214, 212, 79)"></p> 
                 <div id="loading-spinner"></div>                
             </div>
             <img class="filter" id="preview" src="images/prop14.jpg" alt="preview">
-
+            <canvas id="canvas" style="display:none;"></canvas>
         </div>
     </div>
     
@@ -171,9 +171,11 @@ h1 {
     top: 210px;
     z-index: 2;
     display: none;
+
+
 }
 
-#preview.filter {
+/* #preview.filter {
     -webkit-filter: contrast(90%) sepia(20%);
     filter: contrast(90%) sepia(20%);
 }
@@ -185,7 +187,7 @@ h1 {
     mix-blend-mode: overlay;
     background: -webkit-radial-gradient(50% 50%, circle closest-corner, rgba(208, 186, 142, 1) 20, rgba(29, 2, 16, 0.2));
     background: radial-gradient(50% 50%, circle closest-corner, rgba(208, 186, 142, 1) 20, rgba(29, 2, 16, 0.2));
-}
+} */
 
 #image{
     display: none;
@@ -206,6 +208,9 @@ h1 {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/circle-progress.min.js"></script>
 <script src="js/js-backend/img.js"></script>
+
+
+
 
 </body>
 </html>
