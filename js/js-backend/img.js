@@ -42,6 +42,47 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
 });
 
 
+// adding filter to the camera 
+
+document.getElementById('takePhotoButton').addEventListener('click', async function() {
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+
+    // Get access to the camera
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        video.style.display = 'block';
+    } catch (error) {
+        document.getElementById('message').textContent = `Error accessing camera: ${error.message}`;
+        return;
+    }
+
+    // Capture the photo with the filter
+    video.addEventListener('play', function() {
+        context.filter = 'grayscale(100%)'; // Example filter: grayscale
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        canvas.style.display = 'block';
+        video.style.display = 'none';
+
+        // Stop the video stream
+        video.srcObject.getTracks().forEach(track => track.stop());
+
+        // Convert canvas to a data URL and set it as the file input value
+        canvas.toBlob(function(blob) {
+            const file = new File([blob], 'photo.jpg', { type: 'image/jpg' });
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            document.getElementById('image').files = dataTransfer.files;
+        });
+    });
+});
+
+
+
+
+
 
 
 // show under the input 
@@ -60,3 +101,36 @@ document.getElementById('image').addEventListener('change', function() {
     }
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // document.addEventListener('contextmenu', function (e) {
+        //     e.preventDefault();
+        // });
+
+//         var maxPictures = 3;
+//     var picturesTaken = 0;
+
+//     document.getElementById("fileInput").addEventListener("change", function() {
+//         if (this.files && this.files.length > 0) {
+//             // Check if the number of pictures selected plus previously taken pictures exceeds the limit
+//             if (this.files.length + picturesTaken > maxPictures) {
+//                 alert("You can only take a maximum of " + maxPictures + " pictures.");
+//                 // Clear the file input to prevent additional selection
+//                 this.value = "";
+//             } else {
+//                 picturesTaken += this.files.length;
+//             }
+//         }
+//     });
