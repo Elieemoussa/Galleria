@@ -18,10 +18,17 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
         const result = await response.json();
         if (response.ok) {
-            document.getElementById('message').textContent = '';
-            document.getElementById('message').textContent = result.message;
+            document.getElementById('message').textContent = '';        
+            var icon = new Image();
+            icon.src = 'https://img.icons8.com/?size=100&id=83205&format=png&color=40C057'; 
+            icon.alt = 'Done'; 
+            icon.height = 40; 
+            icon.width = 40; 
+            document.getElementById('message').appendChild(icon);
             document.getElementById('uploadForm').reset();      
             document.getElementById('preview').style.display = 'none'; 
+
+
 
         } else {
             document.getElementById('message').textContent = '';
