@@ -14,8 +14,9 @@ document.getElementById('takePhotoButton').addEventListener('click', function() 
     photoCounter++;
     document.getElementById('photoCount').textContent = photoCounter;
     // Disable the button after 10 photos are taken
-    if (photoCounter >= 10) {
+    if (photoCounter >= 1) {
         this.disabled = true;
+        document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
     }
 });
 
