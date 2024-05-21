@@ -113,14 +113,13 @@ h1 {
 
   #preview {
      /* Set desired width */
-    height: 30%; /* Set desired height */
-    object-fit: contain; /* Maintain aspect ratio and cover entire area */
+    height: 30%;
+    object-fit: contain;
     position: absolute;
-    top: 210px;
+    top: 240px;
     z-index: 2;
     border: 2px dotted white; /* Add a 1px white border */
     box-sizing: border-box; /* Include border in the element's dimensions */
-    /* padding: 1px; */
     display: none;
 }
 

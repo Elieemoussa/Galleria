@@ -7,14 +7,14 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
 let photoCounter = 0;
 
 document.getElementById('takePhotoButton').addEventListener('click', function() {
-    if (photoCounter >= 1) {
+    if (photoCounter >= 10) {
         document.getElementById('message').textContent = 'You have already taken 10 photos.';
         return;
     }
     photoCounter++;
     document.getElementById('photoCount').textContent = photoCounter;
     // Disable the button after 10 photos are taken
-    if (photoCounter >= 1) {
+    if (photoCounter >= 10) {
         this.disabled = true;
     }
 });
