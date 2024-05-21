@@ -9,7 +9,7 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script> -->
     <link rel="stylesheet" href="css/styleprogress.css">
 
 </head>
@@ -26,6 +26,7 @@
 
         <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
+                <p><span class="title">Capture the Love:</span><br> Snap a Pic of the Bride and Groom!</p>
                 <form id="uploadForm" enctype="multipart/form-data">
                     <input type="file" id="image" name="image" accept="image/*"  required>
                     <button type="button" id="takePhotoButton" class="transparent-button">Take Photo</button>
@@ -37,7 +38,7 @@
                 <div id="loading-spinner"></div>                
             </div>
             <img class="filter" id="preview" src="images/prop14.jpg" alt="preview">
-            <canvas id="canvas" style="display:none;"></canvas>
+            <!-- <canvas id="canvas" style="display:none;"></canvas> -->
         </div>
     </div>
     
@@ -54,14 +55,11 @@
 
     .title {
          white-space: nowrap; 
-         max-width: 100%;     
+         max-width: 100%; 
+         font-size: 1.8rem;    
         }
 
-        @media screen and (max-width: 480px) {
-        .title {
-            font-size: 38px; /* Adjust this value as needed */
-        }
-    }
+    
 
 
 
@@ -134,7 +132,7 @@
   height: 3rem;
   width: 9rem;
   position: relative;
-  top: 75px;
+  top: 50px;
 }
 
 .transparent-input {
@@ -164,16 +162,18 @@ h1 {
    }
 
   #preview {
-    width: 70%; /* Set desired width */
+     /* Set desired width */
     height: 30%; /* Set desired height */
     object-fit: contain; /* Maintain aspect ratio and cover entire area */
     position: absolute;
     top: 210px;
     z-index: 2;
+    border: 2px dotted white; /* Add a 1px white border */
+    box-sizing: border-box; /* Include border in the element's dimensions */
+    /* padding: 1px; */
     display: none;
-
-
 }
+
 
 /* #preview.filter {
     -webkit-filter: contrast(90%) sepia(20%);

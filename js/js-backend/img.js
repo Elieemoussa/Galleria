@@ -55,13 +55,11 @@ document.getElementById('image').addEventListener('change', function() {
             document.getElementById('preview').style.display = 'block';
 
             // Apply CamanJS filter after the image is loaded
-            Caman("#preview", function () {
-                // Apply the glow sun filter
-                this.vintage();
-    
-                this.render();
+            // Caman("#preview", function () {
+            //     this.vintage();  
+            //     this.render();
                 
-            });
+            // });
         };
         reader.readAsDataURL(file);
     } else {
