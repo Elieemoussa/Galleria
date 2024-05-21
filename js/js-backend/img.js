@@ -1,5 +1,26 @@
-// save to the databse 
+// photo taken
+document.getElementById("takePhotoButton").addEventListener("click", function() {
+    
+    document.getElementById("image").click();
+});
 
+let photoCounter = 0;
+
+document.getElementById('takePhotoButton').addEventListener('click', function() {
+    if (photoCounter >= 1) {
+        document.getElementById('message').textContent = 'You have already taken 10 photos.';
+        return;
+    }
+    photoCounter++;
+    document.getElementById('photoCount').textContent = photoCounter;
+    // Disable the button after 10 photos are taken
+    if (photoCounter >= 1) {
+        this.disabled = true;
+    }
+});
+
+
+// save to the databse 
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -43,10 +64,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     }
 });
 
-document.getElementById("takePhotoButton").addEventListener("click", function() {
-    
-    document.getElementById("image").click();
-});
+
 
 
 
