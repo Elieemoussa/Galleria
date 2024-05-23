@@ -1,6 +1,5 @@
 // photo taken
-document.getElementById("takePhotoButton").addEventListener("click", function() {
-    
+document.getElementById("takePhotoButton").addEventListener("click", function() {   
     document.getElementById("image").click();
 });
 
@@ -25,21 +24,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-let photoCounter = 0;
+// let photoCounter = 0;
 
-document.getElementById('takePhotoButton').addEventListener('click', function() {
-    if (photoCounter >= 10) {
-        document.getElementById('message').textContent = 'You have already taken 10 photos.';
-        return;
-    }
-    photoCounter++;
-    document.getElementById('photoCount').textContent = photoCounter;
-    // Disable the button after 10 photos are taken
-    if (photoCounter >= 10) {
-        this.disabled = true;
-        document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-    }
-});
+// document.getElementById('takePhotoButton').addEventListener('click', function() {
+//     if (photoCounter >= 10) {
+//         document.getElementById('message').textContent = 'You have already taken 10 photos.';
+//         return;
+//     }
+//     photoCounter++;
+//     document.getElementById('photoCount').textContent = photoCounter;
+//     // Disable the button after 10 photos are taken
+//     if (photoCounter >= 10) {
+//         this.disabled = true;
+//         document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
+//     }
+// });
 
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -55,7 +54,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
-            // credentials: 'include' // Include credentials to allow cookies
+            credentials: 'include' // Include credentials to allow cookies
         });
 
         const result = await response.json();
@@ -79,10 +78,14 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             }
 
         } else {
+            document.getElementById('preview').style.display = 'none'; 
             document.getElementById('message').textContent = '';
             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            
         }
     } catch (error) {
+        document.getElementById('preview').style.display = 'none'; 
         document.getElementById('message').textContent = '';
         document.getElementById('message').textContent = `Error: ${error.message}`;
     } finally {
