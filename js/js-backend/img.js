@@ -4,6 +4,27 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
     document.getElementById("image").click();
 });
 
+
+// Function to get cookie value by name
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let uploadCount = getCookie('uploadCount');
+    if (uploadCount) {
+        uploadCount = parseInt(uploadCount);
+        photoCounter = uploadCount;
+        document.getElementById('photoCount').textContent = photoCounter;
+        if (uploadCount >= 10) {
+            document.getElementById('takePhotoButton').disabled = true;
+            document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
+        }
+    }
+});
+
 let photoCounter = 0;
 
 document.getElementById('takePhotoButton').addEventListener('click', function() {
@@ -14,19 +35,17 @@ document.getElementById('takePhotoButton').addEventListener('click', function() 
     photoCounter++;
     document.getElementById('photoCount').textContent = photoCounter;
     // Disable the button after 10 photos are taken
-    if (photoCounter >= 1) {
+    if (photoCounter >= 10) {
         this.disabled = true;
         document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
     }
 });
 
-
-// save to the databse 
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-      // Show loading spinner
-      document.getElementById('loading-spinner').style.display = 'block';
+    // Show loading spinner
+    document.getElementById('loading-spinner').style.display = 'block';
 
     const formData = new FormData();
     const imageFile = document.getElementById('image').files[0];
@@ -35,7 +54,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     try {
         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
             method: 'POST',
-            body: formData
+            body: formData,
+            credentials: 'include' // Include credentials to allow cookies
         });
 
         const result = await response.json();
@@ -50,7 +70,13 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('uploadForm').reset();      
             document.getElementById('preview').style.display = 'none'; 
 
-
+            // Update the counter after successful upload
+            photoCounter = result.uploadCount;
+            document.getElementById('photoCount').textContent = photoCounter;
+            if (photoCounter >= 10) {
+                document.getElementById('takePhotoButton').disabled = true;
+                document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
+            }
 
         } else {
             document.getElementById('message').textContent = '';
@@ -59,11 +85,13 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     } catch (error) {
         document.getElementById('message').textContent = '';
         document.getElementById('message').textContent = `Error: ${error.message}`;
-    }finally {
+    } finally {
         // Hide loading spinner
         document.getElementById('loading-spinner').style.display = 'none';
     }
 });
+
+
 
 
 
