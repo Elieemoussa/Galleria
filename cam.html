@@ -27,6 +27,9 @@
                 <p><span class="title">Capture the Love:</span><br> Snap a Pic of the Bride and Groom!</p>
                 <p><span id="photoCount">0</span> of 10 photos</p>
                 <form id="uploadForm" enctype="multipart/form-data">
+                    <video id="video" autoplay></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <button id="capture" style="display: none;">Capture</button>
                     <input type="file" id="image" name="image" accept="image/*"  required>
                     <button type="button" id="takePhotoButton" class="transparent-button">Take Photo</button>
                     <br>

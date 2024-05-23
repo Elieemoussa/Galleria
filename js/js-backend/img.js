@@ -128,7 +128,39 @@ document.getElementById('image').addEventListener('change', function() {
 
 
 
+const openCameraButton = document.getElementById('takePhotoButton');
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const captureButton = document.getElementById('capture');
+const imageInput = document.getElementById('image');
 
+openCameraButton.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: {
+                aspectRatio: 16 / 9
+            }
+        });
+        video.srcObject = stream;
+        captureButton.style.display = 'block';
+    } catch (err) {
+        console.error('Error accessing the camera: ', err);
+    }
+});
+
+captureButton.addEventListener('click', () => {
+    const context = canvas.getContext('2d');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob(blob => {
+        const file = new File([blob], 'capture.jpg', { type: 'image/jpeg' });
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        imageInput.files = dataTransfer.files;
+        alert('Image captured and added to the file input!');
+    });
+});
 
 
 
