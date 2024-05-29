@@ -63,7 +63,8 @@ body {
 
 .scroll-container {
   max-height: 400px; 
-  overflow-y: scroll;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
   position: relative;
 }
 
