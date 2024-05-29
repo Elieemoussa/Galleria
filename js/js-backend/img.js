@@ -13,7 +13,8 @@ function getCookie(name) {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let uploadCount = getCookie('uploadCount');
-    if (uploadCount) {
+    console.log('Upload count from cookie:', uploadCount); // Debugging line
+    if (uploadCount !== undefined && !isNaN(uploadCount)) {
         uploadCount = parseInt(uploadCount);
         photoCounter = uploadCount;
         document.getElementById('photoCount').textContent = photoCounter;
@@ -21,6 +22,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('takePhotoButton').disabled = true;
             document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
         }
+    } else {
+        // If the cookie is undefined or NaN, set the photoCounter to 0
+        photoCounter = 0;
     }
 });
 
