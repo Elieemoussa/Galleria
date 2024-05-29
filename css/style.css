@@ -61,15 +61,27 @@ body {
   overflow-x: hidden;
 }
 
-/* body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.scroll-container {
+  max-height: 400px; 
+  overflow-y: scroll;
+  position: relative;
+}
+
+.image-container {
+  margin-bottom: 10px;
+  position: relative;
+  left: 42px;
+}
+
+.column-image {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to change the overlay opacity 
-} */
+  display: block;
+}
+
+
+
+
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
