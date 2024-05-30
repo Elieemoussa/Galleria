@@ -71,11 +71,11 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 .image-container {
   margin-bottom: 10px;
   position: relative;
-  left: 42px;
+  left: 22px;
 }
 
 .column-image {
-  width: 100%;
+  width: 90%;
   display: block;
 }
 
@@ -8259,12 +8259,6 @@ overflow-y: hidden;
   }
   
 
-  .photos {
-    width: 70%;
-    height: auto;
-
-/* Adjust this value to control the maximum height of the images */
-}
 
 .image-container {
     margin-bottom: 10px;
