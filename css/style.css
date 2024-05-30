@@ -49,17 +49,17 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
-body {
-  position: relative;
-  background-image: url('/images/img1.jpg');
-  background-color: #000000;
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+  body {
+    position: relative;
+    background-image: url('/images/img1.jpg');
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
 
 .scroll-container {
   max-height: 400px; 
