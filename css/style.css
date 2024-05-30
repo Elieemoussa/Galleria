@@ -82,8 +82,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 
 
-
-
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
