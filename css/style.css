@@ -71,11 +71,11 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 .image-container {
   margin-bottom: 10px;
   position: relative;
-  left: 22px;
+  left: 20px;
 }
 
 .column-image {
-  width: 90%;
+  width: 85%;
   display: block;
 }
 
