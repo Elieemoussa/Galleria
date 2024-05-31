@@ -37,8 +37,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
 
             // Show the remaining time
-            const timeRemaining = Math.max(result.timeLeft, 0); // Ensure time left is not negative
-            document.getElementById('timeRemaining').textContent = `Time left: ${timeRemaining.toFixed(0)} s`;
+            // const timeRemaining = Math.max(result.timeLeft, 0); 
+            // document.getElementById('timeRemaining').textContent = `Time left: ${timeRemaining.toFixed(0)} s`;
 
             if (photoCounter >= result.maxUploads) {
                 document.getElementById('takePhotoButton').disabled = true;
