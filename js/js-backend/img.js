@@ -3,47 +3,6 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
     document.getElementById("image").click();
 });
 
-
-// Function to get cookie value by name
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    let uploadCount = getCookie('uploadCount');
-    console.log('Upload count from cookie:', uploadCount); // Debugging line
-    if (uploadCount !== undefined && !isNaN(uploadCount)) {
-        uploadCount = parseInt(uploadCount);
-        photoCounter = uploadCount;
-        document.getElementById('photoCount').textContent = photoCounter;
-        if (uploadCount >= 10) {
-            document.getElementById('takePhotoButton').disabled = true;
-            document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-        }
-    } else {
-        // If the cookie is undefined or NaN, set the photoCounter to 0
-        photoCounter = 0;
-    }
-});
-
-// let photoCounter = 0;
-
-// document.getElementById('takePhotoButton').addEventListener('click', function() {
-//     if (photoCounter >= 10) {
-//         document.getElementById('message').textContent = 'You have already taken 10 photos.';
-//         return;
-//     }
-//     photoCounter++;
-//     document.getElementById('photoCount').textContent = photoCounter;
-//     // Disable the button after 10 photos are taken
-//     if (photoCounter >= 10) {
-//         this.disabled = true;
-//         document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-//     }
-// });
-
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -99,6 +58,49 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 });
 
 
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let uploadCount = getCookie('uploadCount');
+    console.log('Upload count from cookie:', uploadCount); // Debugging line
+    if (uploadCount !== undefined && !isNaN(uploadCount)) {
+        uploadCount = parseInt(uploadCount);
+        photoCounter = uploadCount;
+        document.getElementById('photoCount').textContent = photoCounter;
+        if (uploadCount >= 10) {
+            document.getElementById('takePhotoButton').disabled = true;
+            document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
+        }
+    } else {
+        // If the cookie is undefined or NaN, set the photoCounter to 0
+        photoCounter = 0;
+        document.getElementById('photoCount').textContent = photoCounter;
+    }
+});
+
+
+
+
+
+// let photoCounter = 0;
+
+// document.getElementById('takePhotoButton').addEventListener('click', function() {
+//     if (photoCounter >= 10) {
+//         document.getElementById('message').textContent = 'You have already taken 10 photos.';
+//         return;
+//     }
+//     photoCounter++;
+//     document.getElementById('photoCount').textContent = photoCounter;
+//     // Disable the button after 10 photos are taken
+//     if (photoCounter >= 10) {
+//         this.disabled = true;
+//         document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
+//     }
+// });
 
 
 
