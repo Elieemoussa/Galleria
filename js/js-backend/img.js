@@ -34,8 +34,13 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             // Update the counter after successful upload
             photoCounter = result.uploadCount;
-            document.getElementById('photoCount').textContent = photoCounter;
-            if (photoCounter >= 10) {
+            document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
+
+            // Show the remaining time
+            const timeRemaining = Math.max(result.timeLeft, 0); // Ensure time left is not negative
+            document.getElementById('timeRemaining').textContent = `Time left: ${timeRemaining.toFixed(0)} s`;
+
+            if (photoCounter >= result.maxUploads) {
                 document.getElementById('takePhotoButton').disabled = true;
                 document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
             }
@@ -58,29 +63,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 });
 
 
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    let uploadCount = getCookie('uploadCount');
-    console.log('Upload count from cookie:', uploadCount); // Debugging line
-    if (uploadCount !== undefined && !isNaN(uploadCount)) {
-        uploadCount = parseInt(uploadCount);
-        photoCounter = uploadCount;
-        document.getElementById('photoCount').textContent = photoCounter;
-        if (uploadCount >= 10) {
-            document.getElementById('takePhotoButton').disabled = true;
-            document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-        }
-    } else {
-        // If the cookie is undefined or NaN, set the photoCounter to 0
-        photoCounter = 0;
-        document.getElementById('photoCount').textContent = photoCounter;
-    }
-});
 
 
 
