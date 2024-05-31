@@ -43,7 +43,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             if (photoCounter >= result.maxUploads) {
                 document.getElementById('takePhotoButton').disabled = true;
                 document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-                document.getElementById('message').textContent = 'Want to snap more photos? come back after 30 min'; 
+                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!n'; 
             }
 
         } else {
