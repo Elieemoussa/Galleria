@@ -8201,6 +8201,7 @@ overflow-y: hidden;
 }
 
 .prompt svg {
+  display: none;
   height: 64px;
   width: 64px;
   transform-origin: 0% 100%;
