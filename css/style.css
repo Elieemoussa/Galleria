@@ -8200,6 +8200,40 @@ overflow-y: hidden;
   margin-right: 19px; /* Adjust spacing as needed */
 }
 
+.prompt svg {
+  height: 64px;
+  width: 64px;
+  transform-origin: 0% 100%;
+  animation-name: swipe;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  opacity: 0.6;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translateX(100px) rotate(10deg);
+  }
+  50% {
+    transform: translateX(-20px) rotate(-15deg) scale(0.9);
+  }
+  100% {
+    transform: translateX(100px) rotate(10deg);
+  }
+}
+/* 
+@keyframes swipe-reverse {
+  0% {
+    transform: translateX(-20px) rotate(-15deg) scale(0.9);
+  }
+  50% {
+    transform: translateX(100px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(-20px) rotate(-15deg) scale(0.9);
+  }
+} */
 
     .item.item-1{
      position: relative;
