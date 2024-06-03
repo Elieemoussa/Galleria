@@ -8201,9 +8201,9 @@ overflow-y: hidden;
 }
 
 #animated-svg {
-  position: relative; /* or position: absolute; depending on your layout */
-  top: 50%; /* Adjust as needed */
-  left: 50%; /* Adjust as needed */
+  position: fixed; /* or position: absolute; depending on your layout */
+  top: 83%; /* Adjust as needed */
+  left: 35%; /* Adjust as needed */
   transform: translate(-50%, -50%); /* Center the SVG */
   display: none;
   height: 64px;
