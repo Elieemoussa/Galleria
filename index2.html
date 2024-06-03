@@ -8,7 +8,7 @@
     <link rel="icon" href="images/marriage (1).png" type="image/x-icon">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  -->
 		<link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styleprogress.css">
   </head>
@@ -39,6 +39,14 @@
                           <div class="pl-3">
                             <p class="name subname">Are getting married</p>
                             <div id="countdown" class="countdown"></div>
+                            <div id="countdown1">
+                              <p class="countdown1">
+                                <span class="countdown-item">days</span>
+                                <span class="countdown-item">hours</span>
+                                <span class="countdown-item">minutes</span>
+                                <span class="countdown-item">seconds</span>
+                              </p>                              
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -266,6 +274,7 @@ var x = setInterval(function() {
         days + " : " + hours.toString().padStart(2, '0') + " : " 
         + minutes.toString().padStart(2, '0') + " : " 
         + seconds.toString().padStart(2, '0');
+
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
