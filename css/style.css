@@ -8172,7 +8172,6 @@ overflow-y: hidden;
     position: relative;
     border-radius: 50%; }
   .testimony-wrap .name {
-    font-weight: 500;
     font-size: 19px;
     margin-bottom: 0;
     color: white;
@@ -8194,6 +8193,7 @@ overflow-y: hidden;
   font-size: 10px;
   font-family: 'lora',cursive;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .countdown-item {
