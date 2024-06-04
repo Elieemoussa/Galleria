@@ -24,7 +24,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="featured-carousel owl-carousel">
-              
+
+             <!-- page 1 -->
 							<div class="item item-1">
                 <div class="testimony-wrap py-4">
                   <div class="row justify-content-center">
@@ -54,8 +55,7 @@
                   </div>
                 </div>
               </div>
-
-
+             <!-- page 2 -->
               <div class="item ">
                 <div class="testimony-wrap py-4">
                   <div class="col-md-8" >
@@ -87,7 +87,7 @@
                 </div>
                 </div>
               </div>
-
+             <!-- page 3 -->
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="col-md-8" >
@@ -124,7 +124,7 @@
                 </div>
                 </div>
               </div>
-
+             <!-- page 4 -->
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="col-md-8">
@@ -153,10 +153,7 @@
                   </div>
                 </div>
               </div>
-              
-              
-              
-
+             <!-- page 5 -->
               <div class="item ">
                 <div class="testimony-wrap py-4">
                   <div class="col-md-8" >
@@ -233,8 +230,8 @@
           </svg>
         </button>
 
-        <audio  id="myAudio" preload="auto" loop m >
-          <source src="images/0502.MP3" type="audio/mpeg"/>
+        <audio  id="myAudio" preload="auto" loop autoplay  >
+          <source src="images/Growing-Old-with-You-v2.mp3" type="audio/mpeg"/>
         </audio>   
   
         </div>
@@ -291,9 +288,11 @@ var x = setInterval(function() {
 
     // Display the result in the element with id="countdown"
     document.getElementById("countdown").innerHTML = 
-        days + " : " + hours.toString().padStart(2, '0') + " : " 
-        + minutes.toString().padStart(2, '0') + " : " 
-        + seconds.toString().padStart(2, '0');
+    '<span class="countdown-part">' + days + '</span><span class="countdown-separator"> : </span>' + 
+    '<span class="countdown-part">' + hours.toString().padStart(2, '0') + '</span><span class="countdown-separator"> : </span>' + 
+    '<span class="countdown-part">' + minutes.toString().padStart(2, '0') + '</span><span class="countdown-separator"> : </span>' + 
+    '<span class="countdown-part">' + seconds.toString().padStart(2, '0') + '</span>';
+
 
     // If the count down is over, write some text 
     if (distance < 0) {

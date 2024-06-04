@@ -8104,9 +8104,9 @@ overflow-y: hidden;
       transform: translateY(-50%);
       margin-top: -10px;
       color: rgba(0, 0, 0, 0.2) !important;
-      -webkit-transition: 0.7s;
-      -o-transition: 0.7s;
-      transition: 0.7s;
+      -webkit-transition: 1.5s;
+      -o-transition:  1.5s;
+      transition:  1.5s;
       opacity: 1; }
       @media (prefers-reduced-motion: reduce) {
         .owl-carousel .owl-nav .owl-prev,
@@ -8190,15 +8190,20 @@ overflow-y: hidden;
 .countdown1 {
   position: relative;
   bottom: 10px;
-  left: 16px;
+  left: 23px;
   font-size: 10px;
   font-family: 'lora',cursive;
   text-transform: uppercase;
 }
 
 .countdown-item {
-  margin-right: 19px; /* Adjust spacing as needed */
+  margin-right: 30px; /* Adjust spacing as needed */
 }
+
+.countdown-separator {
+  margin: 0 6px; /* Adjust the margin to control the space */
+}
+
 
 #animated-svg {
   position: fixed; /* or position: absolute; depending on your layout */
@@ -8268,7 +8273,7 @@ overflow-y: hidden;
 
     .subname{
       font-family: 'Lora', serif;
-      font-weight: 400 ;
+      font-weight: bold ;
       font-style: normal;
     }
 
