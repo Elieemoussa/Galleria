@@ -79,6 +79,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   .owl-carousel {
     z-index: 2; /* Make sure the carousel is above the overlay */
   }
+
+
+  
   
 
 .scroll-container {
@@ -8231,11 +8234,13 @@ overflow-y: hidden;
     font-size: 12px;
     font-family: 'lora',cursive;
     font-style: normal;
+    font-weight:200;
   } 
   .subname_1 {
     font-family: 'lora',cursive;
     font-weight: bold;
     font-style: normal;
+    font-size: 0.91rem;
   } 
 
   .name-container {
