@@ -8240,7 +8240,7 @@ overflow-y: hidden;
     font-family: 'lora',cursive;
     font-weight: bold;
     font-style: normal;
-    font-size: 0.91rem;
+    font-size: 0.8rem;
   } 
 
   .name-container {
@@ -8266,7 +8266,7 @@ overflow-y: hidden;
 }
 
 .countdown-item {
-  margin-right: 28px; /* Adjust spacing as needed */
+  margin-right: 26px; /* Adjust spacing as needed */
 }
 
 .countdown-separator {
@@ -8320,6 +8320,14 @@ overflow-y: hidden;
      top: 120px;
 
     }
+
+    
+    .item.item-3{
+      position: relative;
+      top: 120px;
+ 
+     }
+
   
     .name-1{
       font-family: 'Dancing',cursive;
@@ -8346,6 +8354,14 @@ overflow-y: hidden;
       font-style: normal;
     }
 
+
+.location{
+  font-family: 'lora',cursive;
+  font-size: 1.2rem;
+  font-style: normal;
+  color: white;
+  opacity: 0.5;
+}
 
 
 
