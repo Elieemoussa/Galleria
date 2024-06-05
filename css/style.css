@@ -8181,6 +8181,32 @@ overflow-y: hidden;
     color: #83b582; 
   }
 
+  .parents {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 12px 4px;
+  }
+   .subname_1 span{
+    display: block;
+    font-size: 12px;
+    font-family: 'lora',cursive;
+    font-style: normal;
+  } 
+  .subname_1 p{
+   
+    font-family: 'lora',cursive;
+    font-weight: bold;
+    font-style: normal;
+  } 
+
+  .name-container {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: top;
+}
+
+
   .countdown {
     font-size: 30px;
     font-family: 'lora',cursive;
@@ -8189,7 +8215,7 @@ overflow-y: hidden;
 .countdown1 {
   position: relative;
   bottom: 10px;
-  left: 23px;
+  left: 24px;
   font-size: 10px;
   font-family: 'lora',cursive;
   text-transform: uppercase;
@@ -8197,7 +8223,7 @@ overflow-y: hidden;
 }
 
 .countdown-item {
-  margin-right: 30px; /* Adjust spacing as needed */
+  margin-right: 28px; /* Adjust spacing as needed */
 }
 
 .countdown-separator {
