@@ -51,6 +51,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
   body {
     position: relative;
+    font-family: 'lora',cursive;
     background-image: url('/images/img1.jpg');
     background-color: #000000;
     background-size: cover;
@@ -135,7 +136,9 @@ dd {
   margin-left: 0; }
 
 blockquote {
-  margin: 0 0 1rem; }
+  margin: 0 0 1rem;
+  font-weight: bold;
+}
 
 b,
 strong {
@@ -408,7 +411,9 @@ mark,
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  font-weight: bold;
+ }
 
 .blockquote-footer {
   display: block;
@@ -8181,6 +8186,21 @@ overflow-y: hidden;
     color: #83b582; 
   }
 
+  blockquote em {
+    display: block;
+    opacity: 0.7;
+    font-size: 15px;
+
+}
+
+
+  blockquote::before {
+    content: "❝";
+    font-size: 28px;
+    line-height: 18px;
+    display: block;
+}
+
   .parents {
     display: flex;
     text-align: center;
@@ -8193,8 +8213,7 @@ overflow-y: hidden;
     font-family: 'lora',cursive;
     font-style: normal;
   } 
-  .subname_1 p{
-   
+  .subname_1 {
     font-family: 'lora',cursive;
     font-weight: bold;
     font-style: normal;
