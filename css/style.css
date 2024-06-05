@@ -101,7 +101,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   width: 85%;
   display: block;
   border-radius: 15px;
-  border-style:groove;
+  border-style:solid;
 }
 
 
