@@ -48,10 +48,9 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
-
   body {
     position: relative;
-    font-family: 'lora',cursive;
+    font-family: 'lora', cursive;
     background-image: url('/images/img1.jpg');
     background-color: #000000;
     background-size: cover;
@@ -61,6 +60,19 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     overflow-y: hidden;
     overflow-x: hidden;
   }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity to make it softer or darker */
+    pointer-events: none; /* Ensures the overlay doesn't interfere with other elements */
+    z-index: 1; /* Ensure the overlay is above the background but below other content */
+  }
+  
 
 .scroll-container {
   max-height: 400px; 
