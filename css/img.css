@@ -80,6 +80,7 @@
     }
 
 
+
 .transparent-button {
   background-color: transparent;
   backdrop-filter: blur(3px); /* Apply blur effect */
@@ -147,8 +148,14 @@ h1 {
 }
 
 #button{
+     display: none;
     position: relative;
     top: 340px;
+}
+
+#takePhotoButton{
+   position: relative;
+   top: 150px;
 }
 
 @font-face {

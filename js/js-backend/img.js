@@ -98,8 +98,10 @@ document.getElementById('image').addEventListener('change', function() {
             // Set the source of the preview image to the loaded file
             document.getElementById('preview').src = event.target.result;
             // Display the preview image
-            document.getElementById('preview').style.display = 'block';
+            document.getElementById('preview').style.display = 'inline-block';
 
+            document.getElementById('takePhotoButton').style.display = 'none';  
+            document.getElementById('button').style.display = 'inline-block';   
             // Apply CamanJS filter after the image is loaded
             // Caman("#preview", function () {
             //     this.vintage();  
