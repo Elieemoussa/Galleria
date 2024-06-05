@@ -29,8 +29,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             icon.height = 40; 
             icon.width = 40; 
             document.getElementById('message').appendChild(icon);
-            document.getElementById('uploadForm').reset();      
+            // document.getElementById('uploadForm').reset();      
             document.getElementById('preview').style.display = 'none'; 
+            document.getElementById('button').style.display = 'none'; 
 
             // Update the counter after successful upload
             photoCounter = result.uploadCount;
@@ -98,7 +99,7 @@ document.getElementById('image').addEventListener('change', function() {
             // Set the source of the preview image to the loaded file
             document.getElementById('preview').src = event.target.result;
             // Display the preview image
-            document.getElementById('preview').style.display = 'inline-block';
+            document.getElementById('preview').style.display = 'block';
 
             document.getElementById('takePhotoButton').style.display = 'none';  
             document.getElementById('button').style.display = 'inline-block';   
