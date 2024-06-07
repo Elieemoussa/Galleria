@@ -29,7 +29,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             icon.height = 40; 
             icon.width = 40; 
             document.getElementById('message').appendChild(icon);
-            // document.getElementById('uploadForm').reset();      
+            document.getElementById('uploadForm').reset();      
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('button').style.display = 'none'; 
 
@@ -115,6 +115,7 @@ document.getElementById('image').addEventListener('change', function() {
         document.getElementById('preview').src = "#";
         // Hide the preview image
         document.getElementById('preview').style.display = 'none'; 
+        document.getElementById('button').style.display = 'none'; 
     }
 });
 
