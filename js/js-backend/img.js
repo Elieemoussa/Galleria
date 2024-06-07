@@ -3,17 +3,88 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
     document.getElementById("image").click();
 });
 
+// document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+//     event.preventDefault();
+
+//     // Show loading spinner
+//     document.getElementById('loading-spinner').style.display = 'block';
+
+//     const formData = new FormData();
+//     const imageFile = document.getElementById('image').files[0];
+//     formData.append('image', imageFile);
+
+//     try {
+//         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
+//             method: 'POST',
+//             body: formData,
+//             credentials: 'include' // Include credentials to allow cookies
+//         });
+
+//         const result = await response.json();
+//         if (response.ok) {
+//             document.getElementById('message').textContent = '';        
+//             var icon = new Image();
+//             icon.src = 'https://img.icons8.com/?size=100&id=83205&format=png&color=40C057'; 
+//             icon.alt = 'Done'; 
+//             icon.height = 40; 
+//             icon.width = 40; 
+//             document.getElementById('message').appendChild(icon);
+//             document.getElementById('uploadForm').reset();      
+//             document.getElementById('preview').style.display = 'none'; 
+//             document.getElementById('button').style.display = 'none'; 
+
+//             // Update the counter after successful upload
+//             photoCounter = result.uploadCount;
+//             document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
+
+//             // Show the remaining time
+//             // const timeRemaining = Math.max(result.timeLeft, 0); 
+//             // document.getElementById('timeRemaining').textContent = `Time left: ${timeRemaining.toFixed(0)} s`;
+
+//             if (photoCounter >= result.maxUploads) {
+//                 document.getElementById('takePhotoButton').disabled = true;
+//                 document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
+//                 document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!n'; 
+//             }
+
+//         } else {
+//             document.getElementById('preview').style.display = 'none'; 
+//             document.getElementById('message').textContent = '';
+//             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
+//             throw new Error(`HTTP error! Status: ${response.status}`);
+            
+//         }
+//     } catch (error) {
+//         document.getElementById('preview').style.display = 'none'; 
+//         document.getElementById('message').textContent = '';
+//         document.getElementById('message').textContent = `Error: ${error.message}`;
+//     } finally {
+//         // Hide loading spinner
+//         document.getElementById('loading-spinner').style.display = 'none';
+//     }
+// });
+
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
+
+    console.log('Form submission triggered');
 
     // Show loading spinner
     document.getElementById('loading-spinner').style.display = 'block';
 
     const formData = new FormData();
     const imageFile = document.getElementById('image').files[0];
+    if (!imageFile) {
+        console.error('No file selected');
+        document.getElementById('message').textContent = 'No file selected';
+        document.getElementById('loading-spinner').style.display = 'none';
+        return;
+    }
+
     formData.append('image', imageFile);
 
     try {
+        console.log('Sending fetch request');
         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
@@ -21,48 +92,20 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         });
 
         const result = await response.json();
+        console.log('Fetch response received:', result);
         if (response.ok) {
-            document.getElementById('message').textContent = '';        
-            var icon = new Image();
-            icon.src = 'https://img.icons8.com/?size=100&id=83205&format=png&color=40C057'; 
-            icon.alt = 'Done'; 
-            icon.height = 40; 
-            icon.width = 40; 
-            document.getElementById('message').appendChild(icon);
-            document.getElementById('uploadForm').reset();      
-            document.getElementById('preview').style.display = 'none'; 
-            document.getElementById('button').style.display = 'none'; 
-
-            // Update the counter after successful upload
-            photoCounter = result.uploadCount;
-            document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
-
-            // Show the remaining time
-            // const timeRemaining = Math.max(result.timeLeft, 0); 
-            // document.getElementById('timeRemaining').textContent = `Time left: ${timeRemaining.toFixed(0)} s`;
-
-            if (photoCounter >= result.maxUploads) {
-                document.getElementById('takePhotoButton').disabled = true;
-                document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!n'; 
-            }
-
+            console.log('Upload successful');
         } else {
-            document.getElementById('preview').style.display = 'none'; 
-            document.getElementById('message').textContent = '';
-            document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
-            throw new Error(`HTTP error! Status: ${response.status}`);
-            
+            console.error('HTTP error:', response.status);
         }
     } catch (error) {
-        document.getElementById('preview').style.display = 'none'; 
-        document.getElementById('message').textContent = '';
-        document.getElementById('message').textContent = `Error: ${error.message}`;
+        console.error('Fetch error:', error);
     } finally {
         // Hide loading spinner
         document.getElementById('loading-spinner').style.display = 'none';
     }
 });
+
 
 
 
