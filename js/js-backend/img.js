@@ -17,6 +17,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
+            mode: 'cors',
             credentials: 'include' // Include credentials to allow cookies
         });
 
