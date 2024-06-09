@@ -22,6 +22,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         });
 
         const result = await response.json();
+        console.log('Response received with status:', response.status);
+        console.log('Response cookies:', document.cookie);
+        
         if (response.ok) {
             document.getElementById('message').textContent = '';        
             var icon = new Image();
