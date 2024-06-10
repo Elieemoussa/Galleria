@@ -37,13 +37,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('button').style.display = 'none'; 
 
-            // Manually set cookies using JavaScript
-            // const cookieExpiryTime = 120 * 1000; // Expiry time in milliseconds (1 minute)
-            // let cookieCreationTime = Date.now(); // Current timestamp in milliseconds
-            // document.cookie = `cookieCreationTime=${cookieCreationTime}; path=/; max-age=${cookieExpiryTime / 1000}; secure; samesite=None`;
-            // document.cookie = `uploadCount=${result.uploadCount}; path=/; max-age=${cookieExpiryTime / 1000}; secure; samesite=None`;
-
-
+            // Store data using session storage
+            sessionStorage.setItem('uploadCount', result.uploadCount);
+            sessionStorage.setItem('cookieCreationTime', Date.now().toString());
 
             // Update the counter after successful upload
             photoCounter = result.uploadCount;
