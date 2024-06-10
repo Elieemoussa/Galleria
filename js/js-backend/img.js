@@ -37,9 +37,12 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('button').style.display = 'none'; 
 
-            // Update the counter after successful upload
-            photoCounter = result.uploadCount;
-            document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
+           
+            // Manually set cookies using JavaScript
+            const cookieExpiryTime = 60 * 1000; // Expiry time in milliseconds (1 minute)
+            let cookieCreationTime = Date.now(); // Current timestamp in milliseconds
+            document.cookie = `cookieCreationTime=${cookieCreationTime}; path=/; max-age=${cookieExpiryTime / 1000}; secure; samesite=None`;
+            document.cookie = `uploadCount=${result.uploadCount}; path=/; max-age=${cookieExpiryTime / 1000}; secure; samesite=None`;
 
             // Show the remaining time
             // const timeRemaining = Math.max(result.timeLeft, 0); 

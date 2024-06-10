@@ -153,6 +153,36 @@ h1 {
     top: 340px;
 }
 
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+#cookie-banner button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+#cookie-banner button:hover {
+  background-color: #45a049;
+}
+#cookie-banner a {
+  color: #4CAF50;
+  text-decoration: underline;
+}
+
+
 
 
 @font-face {
