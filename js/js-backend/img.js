@@ -40,6 +40,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             // Store data using session storage
             sessionStorage.setItem('uploadCount', result.uploadCount);
             sessionStorage.setItem('cookieCreationTime', Date.now().toString());
+            
+            document.cookie = `uploadCount=${result.uploadCount}; expires=${new Date(Date.now() + (60 * 1000))}; secure; sameSite=None; domain=wedcam-eb80ccd082f6.herokuapp.com`;
 
             // Update the counter after successful upload
             photoCounter = result.uploadCount;
