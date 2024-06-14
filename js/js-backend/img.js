@@ -11,7 +11,10 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
     const formData = new FormData();
     const imageFile = document.getElementById('image').files[0];
+    // Wedding ID for elie and tia 
+    const wedId = 4549; 
     formData.append('image', imageFile);
+    formData.append('wedId', wedId);
 
     try {
         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
@@ -77,32 +80,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
 
 
-
-
-
-
-
-
-// let photoCounter = 0;
-
-// document.getElementById('takePhotoButton').addEventListener('click', function() {
-//     if (photoCounter >= 10) {
-//         document.getElementById('message').textContent = 'You have already taken 10 photos.';
-//         return;
-//     }
-//     photoCounter++;
-//     document.getElementById('photoCount').textContent = photoCounter;
-//     // Disable the button after 10 photos are taken
-//     if (photoCounter >= 10) {
-//         this.disabled = true;
-//         document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
-//     }
-// });
-
-
-
-
-
 // show under the input 
 document.getElementById('image').addEventListener('change', function() {
     var file = this.files[0];
@@ -114,17 +91,12 @@ document.getElementById('image').addEventListener('change', function() {
             // Display the preview image
             document.getElementById('preview').style.display = 'block';  
             document.getElementById('button').style.display = 'inline-block';   
-            // Apply CamanJS filter after the image is loaded
-            // Caman("#preview", function () {
-            //     this.vintage();  
-            //     this.render();
-                
-            // });
+
         };
         reader.readAsDataURL(file);
     } else {
         // If no file is selected
-        // Reset the source of the preview image
+
         document.getElementById('preview').src = "#";
         // Hide the preview image
         document.getElementById('preview').style.display = 'none'; 
