@@ -19,7 +19,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     formData.append('wedId', wedId);
 
     try {
-        const response = await fetch('https://event-wed.onrender.com/api/v1/img/uploadimg', { 
+        const response = await fetch('api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
             mode: 'cors',
