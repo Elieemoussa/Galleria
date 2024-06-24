@@ -4,6 +4,7 @@
     "http-proxy-middleware": "^3.0.0"
   },
   "scripts": {
-    "start": "node proxy.js"
+    "start": "node proxy.js",
+    "build": "echo 'No build step required'"
   }
 }
