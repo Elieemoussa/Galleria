@@ -1,7 +1,0 @@
-[[redirects]]
-  from = "/api/*"
-  to = "https://wedcam-eb80ccd082f6.herokuapp.com/:splat"
-  status = 200
-  force = true
-  [redirects.headers]
-    X-Forwarded-Host = "elietia.weddingdev.click"

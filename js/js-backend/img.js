@@ -3,6 +3,8 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
     document.getElementById("image").click();
 });
 
+
+
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -17,7 +19,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     formData.append('wedId', wedId);
 
     try {
-        const response = await fetch('/api/v1/img/uploadimg', { 
+        const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
             mode: 'cors',
@@ -44,7 +46,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             sessionStorage.setItem('uploadCount', result.uploadCount);
             sessionStorage.setItem('cookieCreationTime', Date.now().toString());
             
-            document.cookie = `uploadCount=${result.uploadCount}; expires=${new Date(Date.now() + (60 * 1000))}; secure; sameSite=None; domain=wedcam-eb80ccd082f6.herokuapp.com`;
+            document.cookie = `uploadCount=${result.uploadCount}; expires=${new Date(Date.now() + (60 * 1000)).toUTCString()}; secure; samesite=None; domain=wedcam-eb80ccd082f6.herokuapp.com`;
 
             // Update the counter after successful upload
             photoCounter = result.uploadCount;
