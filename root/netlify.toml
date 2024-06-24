@@ -4,4 +4,4 @@
   status = 201
   force = true
   [redirects.headers]
-    X-Forwarded-Host = "netlify.app"
+    X-Forwarded-Host = "elietia.weddingdev.click"
