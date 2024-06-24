@@ -1,0 +1,10 @@
+# netlify.toml
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://wedcam-eb80ccd082f6.herokuapp.com/:splat"
+  status = 200
+  force = true
+  [[redirects.headers]]
+    for = "/*"
+    values.X-Forwarded-Host = "netlify.app"

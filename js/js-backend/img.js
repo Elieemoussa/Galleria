@@ -17,7 +17,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     formData.append('wedId', wedId);
 
     try {
-        const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
+        const response = await fetch('/api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
             mode: 'cors',
@@ -56,20 +56,17 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             if (photoCounter >= result.maxUploads) {
                 document.getElementById('takePhotoButton').disabled = true;
-                document.getElementById('message').textContent = 'You\'ve snapped 10 photos.';
                 document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!n'; 
             }
 
         } else {
             document.getElementById('preview').style.display = 'none'; 
-            document.getElementById('message').textContent = '';
             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
             throw new Error(`HTTP error! Status: ${response.status}`);
             
         }
     } catch (error) {
         document.getElementById('preview').style.display = 'none'; 
-        document.getElementById('message').textContent = '';
         document.getElementById('message').textContent = `Error: ${error.message}`;
     } finally {
         // Hide loading spinner
