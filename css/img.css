@@ -40,7 +40,7 @@
 
     body {
         /* user-select: none; */
-        background-image: url('/images/img1.JPG');
+        background-image: url('/images/intro.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
