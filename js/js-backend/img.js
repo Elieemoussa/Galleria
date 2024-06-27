@@ -56,8 +56,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             if (uploadCount >= 10) {
                 document.getElementById('takePhotoButton').disabled = true;
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
-                localStorage.setItem('cooldownStart', Date.now().toString());
+                const cooldownDuration = 1 * 60 * 1000; // 1 minute in milliseconds
+                const cooldownEnd = Date.now() + cooldownDuration;
+                localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
                 updateCountdown(cooldownEnd);
                 document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 minute for more photo magic!';
