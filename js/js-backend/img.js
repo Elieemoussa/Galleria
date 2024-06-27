@@ -23,7 +23,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             method: 'POST',
             body: formData,
             mode: 'cors',
-            credentials: 'include' // Include credentials to allow cookies
+            // credentials: 'include' // Include credentials to allow cookies
         });
 
         const result = await response.json();
