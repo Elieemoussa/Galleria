@@ -14,7 +14,7 @@ $(window).on('load', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     var images = document.querySelectorAll('.scroll-container img');
-    var loader = document.getElementById('img');
+    var loader = document.getElementById('preloader');
     var totalImages = images.length;
     var imagesLoaded = 0;
 
