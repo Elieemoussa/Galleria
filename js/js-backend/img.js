@@ -46,15 +46,26 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             // Store data using local storage
             localStorage.setItem('uploadCount', result.uploadCount);
             localStorage.setItem('cookieCreationTime', Date.now().toString());
+
+
+
+            // Update and store the upload count locally
+            let uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
+            uploadCount++;
+            localStorage.setItem('uploadCount', uploadCount);
+            localStorage.setItem('cookieCreationTime', Date.now().toString());
+                        
             
+                       
             // Update the counter after successful upload
             // photoCounter = result.uploadCount;
             // document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
+            document.getElementById('photoCount').textContent = `${uploadCount} of 10 photos`;
 
-            // if (photoCounter >= result.maxUploads) {
-            //     document.getElementById('takePhotoButton').disabled = true;
-            //     document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
-            // }
+            if (photoCounter >= result.maxUploads) {
+                document.getElementById('takePhotoButton').disabled = true;
+                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
+            }
             
         } else {
             document.getElementById('preview').style.display = 'none'; 
@@ -73,16 +84,15 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
 
 // Retrieve and display the photo count on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const photoCounter = localStorage.getItem('uploadCount') || 0;
-    const maxUploads = 10; // You can dynamically set this value if needed
-    document.getElementById('photoCount').textContent = `${photoCounter} of ${maxUploads} photos`;
+// document.addEventListener('DOMContentLoaded', () => {
+//     const uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
+//     document.getElementById('photoCount').textContent = `${uploadCount} of 10 photos`;
 
-    if (photoCounter >= maxUploads) {
-        document.getElementById('takePhotoButton').disabled = true;
-        document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
-    }
-});
+//     if (uploadCount >= 10) {
+//         document.getElementById('takePhotoButton').disabled = true;
+//         document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
+//     }
+// });
 
 
 
