@@ -26,9 +26,10 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             // credentials: 'include' // Include credentials to allow cookies
         });
 
-        const result = await response.json();
-        console.log('Response received with status:', response.status);
-        console.log('Response cookies:', document.cookie);
+        // result of the cookies 
+        // const result = await response.json();
+        // console.log('Response received with status:', response.status);
+        // console.log('Response cookies:', document.cookie);
         
         if (response.ok) {
             document.getElementById('message').textContent = '';        
@@ -47,13 +48,14 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             localStorage.setItem('cookieCreationTime', Date.now().toString());
             
             // Update the counter after successful upload
-            photoCounter = result.uploadCount;
-            document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
+            // photoCounter = result.uploadCount;
+            // document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
 
-            if (photoCounter >= result.maxUploads) {
-                document.getElementById('takePhotoButton').disabled = true;
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
-            }
+            // if (photoCounter >= result.maxUploads) {
+            //     document.getElementById('takePhotoButton').disabled = true;
+            //     document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
+            // }
+            
         } else {
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
