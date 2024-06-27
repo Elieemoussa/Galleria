@@ -53,8 +53,6 @@
 } */
 
 .photos {
-    width: 100%;
-    height: auto;
     filter: blur(10px);
     transition: filter 0.5s ease;
 }
