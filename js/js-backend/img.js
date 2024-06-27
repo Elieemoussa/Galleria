@@ -56,12 +56,12 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             if (uploadCount >= 10) {
                 document.getElementById('takePhotoButton').disabled = true;
-                const cooldownDuration = 1 * 60 * 60 * 1000; // 1 minute in milliseconds
-                const cooldownEnd = Date.now() + cooldownDuration;
+                const cooldownDuration = 60 ; // 60 minutes
+                const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
                 localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
                 updateCountdown(cooldownEnd);
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 minute for more photo magic!';
+                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hours for more photo magic!';
             }
             
         } else {
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (uploadCount >= 10 && currentTime < cooldownEnd) {
         document.getElementById('takePhotoButton').disabled = true;
+        const remainingTime = Math.ceil((cooldownEnd - currentTime) / (60 * 1000));
         document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hour for more photo magic!';
         updateCountdown(cooldownEnd);
     } else if (uploadCount >= 10) {
@@ -107,8 +108,8 @@ function updateCountdown(cooldownEnd) {
             clearInterval(intervalId);
             resetCounterAndButton();
         } else {
-            const seconds = Math.floor((remainingTime % (1000 * 60)));
-            countdownElement.textContent = `Cooldown: ${seconds}s remaining`;
+            const seconds = Math.floor((remainingTime / (60 * 1000)));
+            countdownElement.textContent = `Cooldown: ${seconds}m remaining`;
         }
     }, 1000);
 }
