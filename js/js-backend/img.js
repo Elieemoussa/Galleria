@@ -14,7 +14,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     const formData = new FormData();
     const imageFile = document.getElementById('image').files[0];
     // Wedding ID for elie and tia 
-    const wedId = 4549; 
+    const wedId = 6789; 
     formData.append('image', imageFile);
     formData.append('wedId', wedId);
 
