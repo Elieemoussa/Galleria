@@ -43,12 +43,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('button').style.display = 'none'; 
 
-            // Store data using local storage
-            localStorage.setItem('uploadCount', result.uploadCount);
-            localStorage.setItem('cookieCreationTime', Date.now().toString());
-
-
-
             // Update and store the upload count locally
             let uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
             uploadCount++;
