@@ -42,24 +42,17 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('button').style.display = 'none'; 
 
-            // Store data using session storage
-            sessionStorage.setItem('uploadCount', result.uploadCount);
-            sessionStorage.setItem('cookieCreationTime', Date.now().toString());
+            // Store data using local storage
+            localStorage.setItem('uploadCount', result.uploadCount);
+            localStorage.setItem('cookieCreationTime', Date.now().toString());
             
-            document.cookie = `uploadCount=${result.uploadCount}; expires=${new Date(Date.now() + (60 * 1000)).toUTCString()}; secure; samesite=None; domain=wedcam-eb80ccd082f6.herokuapp.com`;
-
             // Update the counter after successful upload
             photoCounter = result.uploadCount;
             document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
 
-            // Show the remaining time
-            // const timeRemaining = Math.max(result.timeLeft, 0); 
-            // document.getElementById('timeRemaining').textContent = `Time left: ${timeRemaining.toFixed(0)} s`;
-
             if (photoCounter >= result.maxUploads) {
                 document.getElementById('takePhotoButton').disabled = true;
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!n'; 
-            }
+                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
 
         } else {
             document.getElementById('preview').style.display = 'none'; 
@@ -73,6 +66,19 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     } finally {
         // Hide loading spinner
         document.getElementById('loading-spinner').style.display = 'none';
+    }
+});
+
+
+// Retrieve and display the photo count on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const photoCounter = localStorage.getItem('uploadCount') || 0;
+    const maxUploads = 10; // You can dynamically set this value if needed
+    document.getElementById('photoCount').textContent = `${photoCounter} of ${maxUploads} photos`;
+
+    if (photoCounter >= maxUploads) {
+        document.getElementById('takePhotoButton').disabled = true;
+        document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 30 minutes for more photo magic!';
     }
 });
 
