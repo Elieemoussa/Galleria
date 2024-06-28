@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elie & Tia's wedding</title>
+    <link rel="icon" href="images/marriage (1).png" type="image/x-icon">
+    <meta http-equiv="Accept-CH" content="Sec-CH-UA-Platform-Version, Sec-CH-UA-Model" />
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script> -->
+    <link rel="stylesheet" href="css/styleprogress.css">
+    <link rel="stylesheet" href="css/img.css">
+
+</head>
+<body>
+
+    <div id="preloder">
+		<div class="loader"></div>
+	</div>
+   
+    <div id="b" class="container subname">
+
+
+        
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <p><span class="title">Capture the Moment</span><br>Snap a pic of the groom-to-be!</p>
+                <p>
+                    <span id="photoCount" class="photocount" >0 of 20 Photos</span>      
+                </p>               
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                    <button type="button" id="takePhotoButton" class="transparent-button">Take Photo</button>
+                    <br>
+                    <button type="submit"  id="button" class="transparent-button">Upload</button>
+                </form>
+
+                <p id="message" style="color: #cfb291"></p>
+                <span id="countdown" class="timecount"></span> 
+                <div id="loading-spinner"></div>                
+            </div>
+            <img class="filter" id="preview" alt="preview">
+            <!-- <canvas id="canvas" style="display:none;"></canvas> -->
+        </div>
+    </div>
+
+    
+
+<script src="js/js-backend/cookies.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/circle-progress.min.js"></script>
+<script src="js/js-backend/img2.js"></script>
+
+
+<style>
+    body{
+        background-image: url('/images/photo/5.jpg') !important;
+    }
+</style>
+
+</body>
+</html>
+
+
+
