@@ -44,9 +44,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('button').style.display = 'none'; 
 
             // Update and store the upload count locally
-            let uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
+            let uploadCount = parseInt(sessionStorage.getItem('uploadCount')) || 0;
             uploadCount++;
-            localStorage.setItem('uploadCount', uploadCount);
+            sessionStorage.setItem('uploadCount', uploadCount);
                                    
                        
             // Update the counter after successful upload
@@ -58,7 +58,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
                 document.getElementById('takePhotoButton').disabled = true;
                 const cooldownDuration = 60 ; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
-                localStorage.setItem('cooldownEnd', cooldownEnd.toString());
+                sessionStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
                 updateCountdown(cooldownEnd);
                 document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hours for more photo magic!';
@@ -82,8 +82,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
 // Retrieve and display the photo count and cooldown on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
-    const cooldownEnd = parseInt(localStorage.getItem('cooldownEnd')) || 0;
+    const uploadCount = parseInt(sessionStorage.getItem('uploadCount')) || 0;
+    const cooldownEnd = parseInt(sessionStorage.getItem('cooldownEnd')) || 0;
     const currentTime = Date.now();
 
     document.getElementById('photoCount').textContent = `${uploadCount} of 20 photos`;
@@ -117,8 +117,8 @@ function updateCountdown(cooldownEnd) {
 function resetCounterAndButton() {
     document.getElementById('takePhotoButton').disabled = false;
     document.getElementById('message').textContent = '';
-    localStorage.setItem('uploadCount', '0');
-    localStorage.removeItem('cooldownEnd');
+    sessionStorage.setItem('uploadCount', '0');
+    sessionStorage.removeItem('cooldownEnd');
     document.getElementById('photoCount').textContent = `0 of 20 photos`;
     document.getElementById('countdown').textContent = '';
 }
@@ -151,68 +151,3 @@ document.getElementById('image').addEventListener('change', function() {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // document.addEventListener('contextmenu', function (e) {
-        //     e.preventDefault();
-        // });
-
-//         var maxPictures = 3;
-//     var picturesTaken = 0;
-
-//     document.getElementById("fileInput").addEventListener("change", function() {
-//         if (this.files && this.files.length > 0) {
-//             // Check if the number of pictures selected plus previously taken pictures exceeds the limit
-//             if (this.files.length + picturesTaken > maxPictures) {
-//                 alert("You can only take a maximum of " + maxPictures + " pictures.");
-//                 // Clear the file input to prevent additional selection
-//                 this.value = "";
-//             } else {
-//                 picturesTaken += this.files.length;
-//             }
-//         }
-//     });
-
-
-
-
-// document.getElementById('image').addEventListener('change', function(event) {
-//     const file = event.target.files[0];
-//     if (file) {
-//         const canvas = document.getElementById('canvas');
-//         const context = canvas.getContext('2d');
-//         const reader = new FileReader();
-        
-//         reader.onload = function(e) {
-//             const img = new Image();
-//             img.onload = function() {
-//                 canvas.width = img.width;
-//                 canvas.height = img.height;
-//                 context.filter = 'grayscale(100%)'; // Example filter: grayscale
-//                 context.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-//                 // Convert canvas to blob and update the file input
-//                 canvas.toBlob(function(blob) {
-//                     const newFile = new File([blob], file.name, { type: 'image/jpg' });
-//                     const dataTransfer = new DataTransfer();
-//                     dataTransfer.items.add(newFile);
-//                     document.getElementById('image').files = dataTransfer.files;
-//                 }, 'image/jpg');
-//             };
-//             img.src = e.target.result;
-//         };
-        
-//         reader.readAsDataURL(file);
-//     }
-// });
