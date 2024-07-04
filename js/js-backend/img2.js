@@ -52,9 +52,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             // Update the counter after successful upload
             // photoCounter = result.uploadCount;
             // document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
-            document.getElementById('photoCount').textContent = `${uploadCount} of 20 photos`;
+            document.getElementById('photoCount').textContent = `${uploadCount} of 5 photos`;
 
-            if (uploadCount >= 20) {
+            if (uploadCount >= 5) {
                 document.getElementById('takePhotoButton').disabled = true;
                 const cooldownDuration = 60 ; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
@@ -86,14 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const cooldownEnd = parseInt(sessionStorage.getItem('cooldownEnd')) || 0;
     const currentTime = Date.now();
 
-    document.getElementById('photoCount').textContent = `${uploadCount} of 20 photos`;
+    document.getElementById('photoCount').textContent = `${uploadCount} of 5 photos`;
 
-    if (uploadCount >= 20 && currentTime < cooldownEnd) {
+    if (uploadCount >= 5 && currentTime < cooldownEnd) {
         document.getElementById('takePhotoButton').disabled = true;
         const remainingTime = Math.ceil((cooldownEnd - currentTime) / (60 * 1000));
         document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hour for more photo magic!';
         updateCountdown(cooldownEnd);
-    } else if (uploadCount >= 20) {
+    } else if (uploadCount >= 5) {
         resetCounterAndButton();
     }
 });
@@ -119,7 +119,7 @@ function resetCounterAndButton() {
     document.getElementById('message').textContent = '';
     sessionStorage.setItem('uploadCount', '0');
     sessionStorage.removeItem('cooldownEnd');
-    document.getElementById('photoCount').textContent = `0 of 20 photos`;
+    document.getElementById('photoCount').textContent = `0 of 5 photos`;
     document.getElementById('countdown').textContent = '';
 }
 
