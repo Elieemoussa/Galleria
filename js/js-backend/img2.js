@@ -52,16 +52,16 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             // Update the counter after successful upload
             // photoCounter = result.uploadCount;
             // document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
-            document.getElementById('photoCount').textContent = `${uploadCount} of 5 photos`;
+            document.getElementById('photoCount').textContent = `${uploadCount} of 10 photos`;
 
-            if (uploadCount >= 5) {
+            if (uploadCount >= 10) {
                 document.getElementById('takePhotoButton').disabled = true;
-                const cooldownDuration = 1 ; // 60 minutes
+                const cooldownDuration = 15 ; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
                 localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
                 updateCountdown(cooldownEnd);
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hours for more photo magic!';
+                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 15 minutes for more photo magic!';
             }
             
         } else {
@@ -86,14 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const cooldownEnd = parseInt(localStorage.getItem('cooldownEnd')) || 0;
     const currentTime = Date.now();
 
-    document.getElementById('photoCount').textContent = `${uploadCount} of 5 photos`;
+    document.getElementById('photoCount').textContent = `${uploadCount} of 10 photos`;
 
-    if (uploadCount >= 5 && currentTime < cooldownEnd) {
+    if (uploadCount >= 10 && currentTime < cooldownEnd) {
         document.getElementById('takePhotoButton').disabled = true;
         const remainingTime = Math.ceil((cooldownEnd - currentTime) / (60 * 1000));
         document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hour for more photo magic!';
         updateCountdown(cooldownEnd);
-    } else if (uploadCount >= 5) {
+    } else if (uploadCount >= 10) {
         resetCounterAndButton();
     }
 });
@@ -119,7 +119,7 @@ function resetCounterAndButton() {
     document.getElementById('message').textContent = '';
     localStorage.setItem('uploadCount', '0');
     localStorage.removeItem('cooldownEnd');
-    document.getElementById('photoCount').textContent = `0 of 5 photos`;
+    document.getElementById('photoCount').textContent = `0 of 10 photos`;
     document.getElementById('countdown').textContent = '';
 }
 
@@ -141,7 +141,7 @@ document.getElementById('image').addEventListener('change', function() {
         };
         reader.readAsDataURL(file);
     } else {
-        // If no file is selected
+   
 
         document.getElementById('preview').src = "#";
         // Hide the preview image
