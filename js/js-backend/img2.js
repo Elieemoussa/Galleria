@@ -44,9 +44,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('button').style.display = 'none'; 
 
             // Update and store the upload count locally
-            let uploadCount = parseInt(sessionStorage.getItem('uploadCount')) || 0;
+            let uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
             uploadCount++;
-            sessionStorage.setItem('uploadCount', uploadCount);
+            localStorage.setItem('uploadCount', uploadCount);
                                    
                        
             // Update the counter after successful upload
@@ -58,7 +58,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
                 document.getElementById('takePhotoButton').disabled = true;
                 const cooldownDuration = 60 ; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
-                sessionStorage.setItem('cooldownEnd', cooldownEnd.toString());
+                localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
                 updateCountdown(cooldownEnd);
                 document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hours for more photo magic!';
@@ -82,8 +82,8 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
 // Retrieve and display the photo count and cooldown on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const uploadCount = parseInt(sessionStorage.getItem('uploadCount')) || 0;
-    const cooldownEnd = parseInt(sessionStorage.getItem('cooldownEnd')) || 0;
+    const uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
+    const cooldownEnd = parseInt(localStorage.getItem('cooldownEnd')) || 0;
     const currentTime = Date.now();
 
     document.getElementById('photoCount').textContent = `${uploadCount} of 5 photos`;
@@ -117,8 +117,8 @@ function updateCountdown(cooldownEnd) {
 function resetCounterAndButton() {
     document.getElementById('takePhotoButton').disabled = false;
     document.getElementById('message').textContent = '';
-    sessionStorage.setItem('uploadCount', '0');
-    sessionStorage.removeItem('cooldownEnd');
+    localStorage.setItem('uploadCount', '0');
+    localStorage.removeItem('cooldownEnd');
     document.getElementById('photoCount').textContent = `0 of 5 photos`;
     document.getElementById('countdown').textContent = '';
 }
