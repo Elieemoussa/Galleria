@@ -56,7 +56,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             if (uploadCount >= 5) {
                 document.getElementById('takePhotoButton').disabled = true;
-                const cooldownDuration = 60 ; // 60 minutes
+                const cooldownDuration = 1 ; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
                 localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
@@ -109,7 +109,7 @@ function updateCountdown(cooldownEnd) {
             resetCounterAndButton();
         } else {
             const seconds = Math.floor((remainingTime / (60 * 1000)));
-            countdownElement.textContent = `Cooldown: ${seconds}m remaining`;
+            countdownElement.textContent = `Cooldown: ${seconds} min remaining`;
         }
     }, 1000);
 }
