@@ -11,8 +11,8 @@
 
    #message{
     position:relative;
-    top: 60px;
-    font-size: 0.9rem;
+    top: 125px;
+    font-size: 1rem;
     font-family: 'lora' , cursive ;  
     font-weight: 600;
    }
