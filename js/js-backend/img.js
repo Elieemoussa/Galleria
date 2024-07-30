@@ -5,14 +5,37 @@ document.getElementById("takePhotoButton").addEventListener("click", function() 
 
 
 
+document.getElementById('image').addEventListener('change', function() {
+    const imageFiles = this.files;
+    const maxFiles = 10;
+
+    if (imageFiles.length > maxFiles) {
+        document.getElementById('error-message').textContent = `You can select a maximum of ${maxFiles} images.`;
+        // Clear the file input
+        this.value = '';
+    } else {
+        document.getElementById('error-message').textContent = '';
+    }
+});
+
 document.getElementById('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
+
+    // Clear previous error message
+    document.getElementById('error-message').textContent = '';
+
+    const imageFiles = document.getElementById('image').files;
+    const maxFiles = 10;
+
+    if (imageFiles.length > maxFiles) {
+        document.getElementById('error-message').textContent = `You can select a maximum of ${maxFiles} images.`;
+        return;
+    }
 
     // Show loading spinner
     document.getElementById('loading-spinner').style.display = 'inline-block';
 
     const formData = new FormData();
-    const imageFiles = document.getElementById('image').files;
     // Wedding ID for elie and tia
     const wedId = 6789;
     formData.append('wedId', wedId);
@@ -26,7 +49,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             method: 'POST',
             body: formData,
             mode: 'cors',
-            
+            // credentials: 'include' // Include credentials to allow cookies
         });
 
         if (response.ok) {
@@ -72,6 +95,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         document.getElementById('loading-spinner').style.display = 'none';
     }
 });
+
 
 
 
