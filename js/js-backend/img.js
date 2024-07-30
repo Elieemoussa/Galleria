@@ -12,25 +12,23 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     document.getElementById('loading-spinner').style.display = 'inline-block';
 
     const formData = new FormData();
-    const imageFile = document.getElementById('image').files[0];
-    // Wedding ID for elie and tia 
-    const wedId = 6789; 
-    formData.append('image', imageFile);
+    const imageFiles = document.getElementById('image').files;
+    // Wedding ID for elie and tia
+    const wedId = 6789;
     formData.append('wedId', wedId);
+
+    for (let i = 0; i < imageFiles.length; i++) {
+        formData.append('images', imageFiles[i]);
+    }
 
     try {
         const response = await fetch('https://wedcam-eb80ccd082f6.herokuapp.com/api/v1/img/uploadimg', { 
             method: 'POST',
             body: formData,
             mode: 'cors',
-            // credentials: 'include' // Include credentials to allow cookies
+            
         });
 
-        // result of the cookies 
-        // const result = await response.json();
-        // console.log('Response received with status:', response.status);
-        // console.log('Response cookies:', document.cookie);
-        
         if (response.ok) {
             document.getElementById('message').textContent = '';        
             var icon = new Image();
@@ -45,30 +43,26 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             // Update and store the upload count locally
             let uploadCount = parseInt(localStorage.getItem('uploadCount')) || 0;
-            uploadCount++;
+            uploadCount += imageFiles.length;
             localStorage.setItem('uploadCount', uploadCount);
-                                   
-                       
-            // Update the counter after successful upload
-            // photoCounter = result.uploadCount;
-            // document.getElementById('photoCount').textContent = `${photoCounter} of ${result.maxUploads} photos`;
+
             document.getElementById('photoCount').textContent = `${uploadCount} of 10 photos`;
 
             if (uploadCount >= 10) {
                 document.getElementById('takePhotoButton').disabled = true;
-                const cooldownDuration = 60 ; // 60 minutes
+                const cooldownDuration = 60; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
                 localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
                 updateCountdown(cooldownEnd);
-                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hours for more photo magic!';
+                document.getElementById('message').textContent = 'Can\'t get enough snaps? Return in 1 hour for more photo magic!';
             }
-            
+
         } else {
+            const result = await response.json(); // Parse the response JSON
             document.getElementById('preview').style.display = 'none'; 
             document.getElementById('message').textContent = `Error: ${result.error || result.message}`;
             throw new Error(`HTTP error! Status: ${response.status}`);
-            
         }
     } catch (error) {
         document.getElementById('preview').style.display = 'none'; 
@@ -78,6 +72,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
         document.getElementById('loading-spinner').style.display = 'none';
     }
 });
+
 
 
 // Retrieve and display the photo count and cooldown on page load
