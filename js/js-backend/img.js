@@ -56,7 +56,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
 
             if (uploadCount >= 10) {
                 document.getElementById('takePhotoButton').disabled = true;
-                const cooldownDuration = 1 ; // 60 minutes
+                const cooldownDuration = 60 ; // 60 minutes
                 const cooldownEnd = Date.now() + cooldownDuration * 60 * 1000;
                 localStorage.setItem('cooldownEnd', cooldownEnd.toString());
 
@@ -151,3 +151,11 @@ document.getElementById('image').addEventListener('change', function() {
 });
 
 
+document.getElementById("resetLocalStorageButton").addEventListener("click", function() {
+    if (confirm("Are you sure you want to reset all local storage?")) {
+        localStorage.clear();
+        alert("Local storage has been reset.");
+        // Optionally, you can reload the page to apply the reset
+        location.reload();
+    }
+});
