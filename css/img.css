@@ -156,9 +156,9 @@ h1 {
 }
 
 #button{
-     display: none;
+    display: none;
     position: relative;
-    top: 340px;
+    top: 300px;
 }
 
 #cookie-banner {
