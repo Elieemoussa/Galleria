@@ -49,7 +49,7 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; 
 }
-
+/* 
   body {
     position: relative;
     font-family: 'lora', cursive;
@@ -65,15 +65,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   
   body::before {
     content: "";
-    position: fixed; /* Change to fixed to cover the entire viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Adjust the opacity to make it softer or darker */
-    pointer-events: none; /* Ensures the overlay doesn't interfere with other elements */
-    z-index: 1; /* Ensure the overlay is behind the carousel and other content */
-  }
+    background-color: rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    z-index: 1;
+  } */
   
   /* Adjust z-index of the carousel if necessary */
   .owl-carousel {
