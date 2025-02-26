@@ -12,22 +12,23 @@
 	top: 0;
 	left: 0;
 	z-index: 999999;
-    background-color: #f5f5dc;	
+    background-color: whitesmoke;	
 }
 
 .loader {
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
 	position: absolute;
-	border: 8px solid  #cfb291; 
-    border-top: 8px solid  #95725a;
 	top: 50%;
 	left: 50%;
-	margin-top: -13px;
-	margin-left: -13px;
-    border-radius: 50%;
-    animation: spin 2s linear infinite;
-}
+	margin-top: -30px;
+	margin-left: -30px;
+	border:6px solid rgba(128, 128, 128, 0.096); /* Make the border thinner */
+	border-top: 6px solid #add8e6; /* Soft blue color */
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+  }
+  
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
