@@ -103,3 +103,11 @@ body::before {
 .attend-p-1{
     position: relative; top: -10px; font-size: 1.2rem;
 }
+
+.timeline {
+  text-align: inherit;
+  list-style: none;
+  padding: 0;
+  margin: -0.5rem 4.9rem;
+  font-family: 'marlet', serif;
+}
