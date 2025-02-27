@@ -1,0 +1,11 @@
+/* Hide content and show message for screens larger than 768px */
+@media (max-width: 700px) {
+    #content {
+        display: none; 
+    }
+    #hide-message {
+        display: block !important; 
+    }
+
+  }
+
