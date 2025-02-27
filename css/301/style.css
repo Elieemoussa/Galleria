@@ -53,7 +53,7 @@ body::before {
 
 
 .name-1 {
-  font-family: 'scrotch', cursive !important;
+  font-family: cursive !important;
   position: relative;
   top: -40px;
 }
