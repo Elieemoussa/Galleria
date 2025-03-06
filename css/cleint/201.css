@@ -4,7 +4,7 @@
 body {
   position: relative;
   font-family: 'lora', cursive;
-  background-image: url('/images/301/302.jpg');
+  background-image: url('/images/201/201.jpeg');
   background-color: #000000;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); 
+  background-color: rgba(0, 0, 0, 0.2); 
   pointer-events: none; 
   z-index: 1;
 }

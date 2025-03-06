@@ -4,6 +4,8 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ @import url('/media/fonts.css');
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8453,6 +8455,20 @@ overflow-y: hidden;
   z-index: 9999; 
 }
 
+#desktop-message {
+  display: none;
+  text-align: center; 
+  font-size: 2em; 
+  font-weight: bold; 
+  color: white;
+  font-family: 'Arial', sans-serif; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  padding: 20px;
+  z-index: 20; 
+}
 
 #hide-message {
   display: none;
@@ -8466,6 +8482,47 @@ overflow-y: hidden;
   transform: translate(-50%, -50%); 
   color: white ; 
   z-index: 9999; 
+}
+
+
+#toggleButton {
+  position: fixed; 
+  top: 75%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: transparent;
+  backdrop-filter: blur(3px); /* Apply blur effect */
+	-webkit-backdrop-filter: blur(3px); /* Safari blur effect */
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  justify-content: center; 
+  font-size: 1.3rem;
+  line-height: 2.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+  height: 3rem;
+  width: 12rem;
+}
+
+#toggleButton:hover {
+       color: white;
+       text-decoration: none;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+#content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Hide content and show message for screens larger than 768px */
