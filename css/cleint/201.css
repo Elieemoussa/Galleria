@@ -63,6 +63,11 @@ body::before {
   z-index: 1;
 }
 
+#content{
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
 
 
 .name-1 {
