@@ -8486,6 +8486,7 @@ overflow-y: hidden;
 
 
 #toggleButton {
+  font-family: 'marlet', cursive;
   position: fixed; 
   top: 75%; 
   left: 50%; 
@@ -8510,16 +8511,33 @@ overflow-y: hidden;
        text-decoration: none;
 }
 
+#logo {
+  width: 200px; /* Adjust size */
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
+
+
 .fade-in {
   opacity: 1 !important;
   visibility: visible !important;
+  transition: opacity 1s ease-in-out !important;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
 }
 
 
 #content {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1.5s ease-in-out, visibility 0s linear 1s;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
