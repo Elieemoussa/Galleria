@@ -1,0 +1,24 @@
+body {
+    position: relative;
+    font-family: 'lora', cursive;
+    background-image: url('/images/intro.jpg');
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    z-index: 1;
+  }

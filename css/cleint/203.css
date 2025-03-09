@@ -1,7 +1,5 @@
 @import url('/media/fonts.css');
 
-
-
 body {
   position: relative;
   font-family: 'lora', cursive;
@@ -52,7 +50,7 @@ body::before {
 
 
 
-.name-1 {
+/* .name-1 {
   font-family: 'Vibes',cursive !important;
   position: relative;
   top: -40px;
@@ -65,19 +63,19 @@ body::before {
   line-height: 2.25rem;
   font-weight: 550 !important;
   font-family: 'Vibes', cursive !important;
-}
+} */
 
 .subname {
   font-family: 'marlet', serif;
   font-weight: bold;
   font-style: normal;
 }
-.and{
+/* .and{
   font-family: 'andfont', serif !important;
   font-size: 60px;
   position: relative;
   top: -15px;
-}
+} */
 
 .firstName{
   padding-right: 160px; 
@@ -88,7 +86,7 @@ body::before {
   padding-left: 160px; 
   font-size: 3.2rem;
   position: relative;
-  top: -20px;
+  top: 0px;
 }
 
 .item.item-1 {
@@ -96,10 +94,10 @@ body::before {
   top: 140px;
 }
 
-.item.item-3 {
+/* .item.item-3 {
     position: relative;
     top: 0px !important;
-}
+} */
 
 
 .attend-p-1{
