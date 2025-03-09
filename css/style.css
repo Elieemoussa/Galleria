@@ -8384,6 +8384,10 @@ overflow-y: hidden;
   opacity: 0.5;
 }
 
+.location:focus {
+  color: white; /* Make it white when it gains focus (after click) */
+  opacity: 1;   /* Remove opacity when focused */
+}
 
 
 
