@@ -8538,22 +8538,41 @@ overflow-y: hidden;
   width: 200px; /* Adjust size */
   z-index: 2;
   font-weight: bold;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+  font-style:italic;
   position: absolute;
-  top: 60px;
+  opacity: 0.8;
+  top: 50px;
   left: 50%;
   font-family: 'andfont',cursive ;
   transform: translateX(-50%);
   transition: opacity 0.5s ease-in-out;
 }
 
-#title-date {
+#title-name {
   text-align: center;
+  letter-spacing: 6px;
   width: 200px; /* Adjust size */
   z-index: 2;
   font-size: 0.8rem;
   position: absolute;
-  top: 120px;
+  top: 130px;
+  left: 50%;
+  font-family: 'scrotch',cursive ;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+
+#title-date {
+  text-align: center;
+  letter-spacing: 3px;
+  width: 200px; /* Adjust size */
+  z-index: 2;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 150px;
   left: 50%;
   font-family: 'scrotch',cursive ;
   transform: translateX(-50%);

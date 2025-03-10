@@ -4,6 +4,7 @@ document.getElementById("toggleButton").addEventListener("click", function() {
     let logo = document.getElementById("logo");
     let title = document.getElementById("title");
     let date = document.getElementById("title-date");
+    let name = document.getElementById("title-name");
 
     content.classList.add("fade-in");   
 
@@ -20,6 +21,11 @@ document.getElementById("toggleButton").addEventListener("click", function() {
         date.classList.add("fade-out"); 
         setTimeout(() => date.style.display = "none", 1000); 
     }
+    if (name) { 
+        name.classList.add("fade-out"); 
+        setTimeout(() => name.style.display = "none", 1000); 
+    }
+
     content.style.visibility = "visible";
     this.style.display = "none"; // Hide button
 
