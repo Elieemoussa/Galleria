@@ -71,3 +71,12 @@
     line-gap-override: 0.00%;
     size-adjust: 104.96%;
   }
+
+  @font-face {
+    font-family: "amiri";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/media/ar/Amiri.woff2") format("woff2");
+  }
+  
+

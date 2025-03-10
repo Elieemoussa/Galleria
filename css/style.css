@@ -64,7 +64,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     overflow-y: hidden;
     overflow-x: hidden;
   }
-  
+
+
   body::before {
     content: "";
     position: fixed;
@@ -82,9 +83,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     z-index: 2; /* Make sure the carousel is above the overlay */
   }
 
-
-  
-  
 
 .scroll-container {
   max-height: 400px; 
@@ -8504,9 +8502,10 @@ overflow-y: hidden;
   font-size: 1.3rem;
   line-height: 2.25rem;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+  transition: background-color 0.3s, color 0.3s; 
   height: 3rem;
   width: 12rem;
+  z-index: 3;
 }
 
 #toggleButton:hover {
@@ -8534,6 +8533,32 @@ overflow-y: hidden;
   transition: opacity 0.5s ease-in-out;
 }
 
+#title {
+  text-align: center;
+  width: 200px; /* Adjust size */
+  z-index: 2;
+  font-weight: bold;
+  font-size: 3.5rem;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  font-family: 'andfont',cursive ;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
+
+#title-date {
+  text-align: center;
+  width: 200px; /* Adjust size */
+  z-index: 2;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  font-family: 'scrotch',cursive ;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
 
 
 
