@@ -57,6 +57,9 @@ blockquote {
 font-family: 'Amiri', sans-serif;
 font-weight: unset;
 }
+blockquote p{
+line-height: 25px;
+}
 
 /* .name-1 {
   font-family: 'Vibes',cursive !important;
