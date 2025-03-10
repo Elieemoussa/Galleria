@@ -7,5 +7,20 @@
         display: block !important; 
     }
 
+    #title-date{
+        display: none; 
+    }
+    #title-name{
+    display: none; 
+    }
+    
+    #Logo{
+        display: none !important;
+    }
+
+    #toggleButton{
+        display: none;
+    }
+
   }
 
