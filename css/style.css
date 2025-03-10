@@ -8488,6 +8488,7 @@ overflow-y: hidden;
 
 
 #toggleButton {
+  font-family: 'marlet',sans-serif;
   position: fixed; 
   top: 75%; 
   left: 50%; 
