@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
 		<link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/cleint/301.css">
-    <link rel="stylesheet" href="/css/hide.css">
+    <!-- <link rel="stylesheet" href="/css/hide.css"> -->
     <link rel="stylesheet" href="/css/styleprogress.css">
   </head>
   <body>
@@ -190,25 +190,30 @@
                     </div>
                     <div class="p-4 text-center" style="position: relative; top: 50px;">
                       <div class="col-md-8" style="position: relative;">
-                        <p class="subname" style="position: relative; top: -14px; font-size: 1rem !important;">We are honored to have you celebrate this special day with us.</p>
+                        <p class="subname" style="position: relative; top: -60px; font-size: 1rem !important;">We are honored to have you celebrate this special day with us.</p>
                         <p class="text-center subname attend-p-1 " id="guestSection" ><strong><span >Open Invitation</span></strong></p>
                       </div>
-                      
-                      <div class="col-md-8" style="position: relative;">
-                        <p class="subname" style="position: relative; top: 30px; font-size: 1rem !important;">Please let us know if you'll be able to celebrate with us Before </p>                       
-                        <p class="subname" style="position: relative; top: 15px; font-size: 1rem;">30.4.2025</p>
-                        <p class="subname" style="position: relative; top: 30px; font-size: 0.8rem;">Via Whatsapp</p>
-                      </div>
+                    </div>    
+
+                    <p class="text-center guest-p" style="font-size: 1rem; font-weight: bold;">Kindly confirm your attendance before</p>
+                    <p class="guest-p text-center" style="position: relative; top: -15px;">30.4.2025</p>
+                    <div class="container text-center">
+                      <input type="text" id="firstName" placeholder="Full Name" name="random123" class="input-attend text-center"required autocomplete="off" >
+                      <input type="number" id="lastName" placeholder="Phone Nb" class="input-attend  text-center" required  autocomplete="off">
+                      <input type="number" id="attendNb" placeholder="Attendance Number" class="input-attend  text-center" required  autocomplete="off">
                     </div>
-                    <div class="row justify-content-center" style="position: relative; top: 75px;"> <!-- Center the buttons horizontally -->
-                      <div class="col-md-8 text-center subname"> <!-- Adjusted column width -->
-                        <a href="https://wa.me/+96103668003" class="transparent-button">Samih</a>
-                        <a href="https://wa.me/+96176476738" class="transparent-button">Celine</a> <!-- Both buttons in the same row -->
+                
+                    <div class=" justify-content-center rsvp">
+                      <div class="col-md-8 text-center subname">  
+                        <button onclick="submitResponse('Attending')" class="rsvp-button" id="submitB1">Attending</button>
+                        <button onclick="submitResponse('Not Attending')" class="rsvp-button" id="submitB2">Not Attending</button>
                       </div>
+                      <p id="status"></p>
                     </div>
-                  </div>
+
                 </div>
               </div>
+            </div>
 
               <div class="item  item-5 ">
                 <div class="testimony-wrap py-4 ">
@@ -332,6 +337,7 @@
   <script src="/js/swipe.min.js"></script>   
   <script src="/js/nbguest.js"></script>  
   <script src="/js/imgloop.js"></script>
+  <script src="/js/sheet/301sheet.js"></script>  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/circle-progress.min.js"></script>
   <script>

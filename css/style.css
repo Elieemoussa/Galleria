@@ -8419,6 +8419,43 @@ overflow-y: hidden;
       /* opacity: 0.5; */
   }
 
+
+
+  .rsvp-button {
+    background-color: transparent !important;
+    backdrop-filter: blur(3px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(3px); /* Safari blur effect */
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 1rem;
+    line-height: 2.25rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+    height: 2.5rem;
+    width: 9rem;
+  }
+  
+    
+    
+    .rsvp-button:hover {
+        /* background-color: white; */
+        color: white;
+        text-decoration: none;
+        /* opacity: 0.5; */
+    }
+
+  .rsvp{
+    position: relative;
+    top: 25px;
+   }
+
+
   .blur-background {
     position: absolute;
     top: 0;
@@ -8432,13 +8469,55 @@ overflow-y: hidden;
     border-radius: 10px; /* Adjust the border radius */
     z-index: -1;
   }
-  
-
 
 .image-container {
     margin-bottom: 10px;
 }
 
+.guest-p{
+  font-size: 15px;
+  font-family: 'marlet', serif;
+}
+
+
+.input-attend {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255, 0.39);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  height: 3rem;
+  width: 9rem;
+  position: relative;
+  font-family: 'marlet', serif;
+
+}
+
+
+
+.input-attend {
+  margin: 0.2rem 0;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  width: 100%;
+  
+}
+
+.input-attend:focus {
+  border-bottom: 1px solid white;
+  outline: none; /* Removes the default focus outline */
+}
+
+#status{
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  font-family: 'marlet', serif;
+}
 
 /* Default styling: show content on small screens */
 /* Default styling: show content on small screens */
