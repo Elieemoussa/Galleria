@@ -3,12 +3,25 @@
 body {
   position: relative;
   font-family: 'lora', cursive;
+  background-image: url('/images/203/203v3.jpeg');;
   background-color: whitesmoke !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   overflow: hidden;
+}
+/* Overlay for dark effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 1;
 }
 
 #content{
@@ -40,18 +53,7 @@ body {
   z-index: -1;
 }
 
-/* Overlay for dark effect */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  z-index: 1;
-}
+
 
 blockquote {
 font-family: 'Amiri', sans-serif;
@@ -110,11 +112,20 @@ line-height: 25px;
   position: relative;
   top: 140px;
 }
+.item.item-3 {
+  position: relative;
+  top: 50px;
+}
 
-/* .item.item-3 {
-    position: relative;
-    top: 0px !important;
-} */
+#logo {
+  width: 100px; /* Adjust size */
+  z-index: 2;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
 
 
 .attend-p-1{

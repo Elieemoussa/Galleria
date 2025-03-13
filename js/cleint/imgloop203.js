@@ -1,7 +1,9 @@
 const images = [
     '/images/203/203v2.jpeg',
     '/images/203/203.jpeg',
-    '/images/203/203v3.jpeg'
+    '/images/203/203v3.jpeg',
+    '/images/203/203v4.jpeg',
+    '/images/203/203v5.jpeg'
 ];
 
 let index = 0;
