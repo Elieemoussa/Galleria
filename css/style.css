@@ -8478,6 +8478,10 @@ overflow-y: hidden;
 }
 
 
+.input{
+  margin-top: -30px;
+}
+
 .input-attend {
   background-color: transparent;
   color: white;
