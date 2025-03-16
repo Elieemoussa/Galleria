@@ -101,6 +101,11 @@ body::before {
     top: 0px !important;
 }
 
+.item.item-5 {
+  position: relative;
+  top: 120px;
+}
+
 
 .attend-p-1{
     position: relative; top: -70px; font-size: 0.9rem;
@@ -110,7 +115,7 @@ body::before {
   text-align: inherit;
   list-style: none;
   padding: 0;
-  margin: -0.5rem 4.9rem;
+  margin: -0.5rem 3.9rem;
   font-family: 'marlet', serif;
   font-size: 1.4rem;
 }
@@ -118,6 +123,6 @@ body::before {
 @media (max-width: 400px) {
   .timeline {
     font-size: 1.2rem;
-    margin: -0.5rem 3.9rem;
+    margin: -0.5rem 3rem;
   }
 }
