@@ -27,6 +27,38 @@ body::before {
   z-index: 1;
 }
 
+
+
+#content{
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#logo {
+  width: 100px; /* Adjust size */
+  z-index: 2;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
+
+#title-name {
+  text-align: center;
+  letter-spacing: 6px;
+  width: 250px; /* Adjust size */
+  z-index: 2;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  font-family: 'scrotch',cursive ;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
+
 /* Two layers for crossfade effect */
 .bg-layer {
   position: fixed;
