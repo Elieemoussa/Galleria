@@ -21,11 +21,4 @@ if (guestCount && guestSpan) {
     }
 }
 
-// Append 'guests' parameter to specific links
-if (guestCount) {
-  document.querySelectorAll("a.btn-intro").forEach(link => {
-      const url = new URL(link.href, window.location.origin);
-      url.searchParams.set("guests", guestCount);
-      link.href = url.toString();
-  });
-}
+
