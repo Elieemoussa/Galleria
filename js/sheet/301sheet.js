@@ -4,10 +4,11 @@ function submitResponse(response) {
     const PhoneNumber = document.getElementById("lastName").value.trim();
     const AttendNumber = document.getElementById("attendNb").value.trim();
 
-    if (!FullName || !PhoneNumber || !AttendNumber ) {
-        document.getElementById("status").innerText = "Please enter your name.";
+    if (!FullName || !PhoneNumber || !AttendNumber) {
+        document.getElementById("status").innerText = "Please fill out the entire form.";
         return;
     }
+    
     document.getElementById("submitB1").disabled = true;
     document.getElementById("submitB2").disabled = true;
 
