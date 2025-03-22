@@ -4,7 +4,7 @@ function submitResponse(response) {
     const PhoneNumber = document.getElementById("lastName").value.trim();
     const AttendNumber = document.getElementById("attendNb").value.trim();
 
-    if (!FullName || !PhoneNumber) {
+    if (!FullName || !PhoneNumber || !AttendNumber ) {
         document.getElementById("status").innerText = "Please enter your name.";
         return;
     }
