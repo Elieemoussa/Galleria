@@ -119,9 +119,19 @@ body::before {
   font-size: 1.4rem;
 }
 
+
+.rsvp-button {
+  width: 9rem;
+}
+
+
 @media (max-width: 400px) {
   .timeline {
     font-size: 1.2rem;
     margin: -0.5rem 3rem;
   }
+  .rsvp-button {
+    width: 8rem;
+  }
+  
 }
