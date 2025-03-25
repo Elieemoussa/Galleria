@@ -51,6 +51,12 @@ body::before {
 }
 
 
+.input-attend::placeholder {
+  color: white; /* Replace with your desired color */
+  opacity: 0.8;
+}
+
+
 .name-1 {
   font-family: 'Vibes',cursive !important;
   position: relative;
