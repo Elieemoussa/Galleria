@@ -1,5 +1,5 @@
 const images = [
-    '/images/301/2.jpg',
+    '/images/301/2.jpeg',
     '/images/301/3.jpg',
     '/images/301/1.jpg'
 ];
