@@ -80,3 +80,49 @@
   }
 
 
+  @font-face {
+    font-family: "adobe-ar";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/media/ar/adobe-ar.woff") format("woff"),
+         url("/media/ar/adobe-ar.woff2") format("woff2"),
+         url("/media/ar/adobe-ar.eot") format("opentype"),
+  }
+  
+  
+  @font-face {
+    font-family: "amiri";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/media/ar/Amiri.woff2") format("woff2"),
+         url("/media/ar/Amiri.woff") format("woff"),
+         url("/media/ar/Amiri.eot") format("opentype"),
+  }
+  
+  
+  @font-face {
+    font-family: "Quiver-regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/media/ar/Quiver-regular.woff2") format("woff2"),
+         url("/media/ar/Quiver-regular.woff") format("woff"),
+         url("/media/ar/Quiver-regular.eot") format("opentype"),
+  
+  }
+  @font-face {
+    font-family: "Quiver-bold";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/media/ar/Quiver-bold.woff2") format("woff2"),
+         url("/media/ar/Quiver-bold.woff") format("woff"),
+         url("/media/ar/Quiver-bold.eot") format("opentype"),
+  
+  }
+  
+  @font-face {
+    font-family: "Quiver-light";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/media/ar/Quiver-light.woff2") format("woff2"),
+  }
+  
