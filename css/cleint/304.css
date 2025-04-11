@@ -5,7 +5,7 @@
 body {
   position: relative;
   font-family: 'lora', cursive;
-  background-image: url('/images/intro.jpg');
+  background-image: url('/images/couple.jpg');
   background-color: black !important;
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,14 +47,13 @@ body::before {
 
 #title-name {
   text-align: center;
-  letter-spacing: 6px;
+  word-spacing: 6px;
   width: 250px; /* Adjust size */
   z-index: 2;
-  font-size: 0.8rem;
+  font-size: 3.8rem;
   position: absolute;
-  top: 130px;
+  top: 60px;
   left: 50%;
-  font-family: 'scrotch',cursive ;
   transform: translateX(-50%);
   transition: opacity 0.5s ease-in-out;
 }

@@ -8590,7 +8590,7 @@ overflow-y: hidden;
 
 
 #toggleButton {
-  font-family: 'marlet',sans-serif;
+  font-family: 'amiri',sans-serif;
   position: fixed; 
   top: 75%; 
   left: 50%; 
@@ -8654,14 +8654,13 @@ overflow-y: hidden;
 
 #title-name {
   text-align: center;
-  letter-spacing: 6px;
   width: 200px; /* Adjust size */
   z-index: 2;
   font-size: 0.8rem;
   position: absolute;
   top: 130px;
   left: 50%;
-  font-family: 'scrotch',cursive ;
+  font-family: 'Quiver-bold',cursive ;
   transform: translateX(-50%);
   transition: opacity 0.5s ease-in-out;
 }
@@ -8677,7 +8676,7 @@ overflow-y: hidden;
   position: absolute;
   top: 150px;
   left: 50%;
-  font-family: 'scrotch',cursive ;
+  font-family: 'adobe-ar',cursive ;
   transform: translateX(-50%);
   transition: opacity 0.5s ease-in-out;
 }
